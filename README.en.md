@@ -16,6 +16,10 @@ The documentation is in Spanish. This page is a short summary.
 
 Fifteen seconds of a real fight against Juice (second phase): the game on the left, the live panel on the right. The network mostly waits, and when the hit comes the Parry bar jumps to 100% and the AI parries.
 
+![The live neuron panel during a fight against Juice](docs/img/panel.gif)
+
+Fourteen seconds of the full panel in a real fight against Juice (second phase): the neurons of both policy layers, the probability of each action, the inputs that weighed most in the decision and the value estimate V(s) of the last 20 s, with a green mark at every parry. It is explained in [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
+
 ## Results
 
 100 fights per boss, boss at full health, first phase of each boss, deterministic policy. All numbers come from the real game.

@@ -10,9 +10,9 @@ Este proyecto es educativo, no oficial y no tiene relación con NorDreams. Neces
 
 ## Demo
 
-![Panel de neuronas durante una pelea contra Juice](docs/img/panel.png)
+![Panel de neuronas en vivo durante una pelea contra Juice](docs/img/panel.gif)
 
-El panel en vivo muestra las neuronas de la red, la probabilidad de cada acción y las entradas que más pesaron en la decisión. Se explica en [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
+Catorce segundos del panel completo en una pelea real contra Juice (segunda fase): las neuronas de las dos capas de la política, la probabilidad de cada acción, las entradas que más pesaron en la decisión y la confianza V(s) de los últimos 20 s, con una marca verde en cada parry. Se explica en [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
 
 ![La IA peleando contra Juice con el panel de neuronas](docs/img/pelea.gif)
 
