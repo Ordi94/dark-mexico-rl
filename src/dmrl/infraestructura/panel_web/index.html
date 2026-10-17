@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de la red - Dark Mexico</title>
+<style>
+  :root {
+    --fondo: #0d1016; --panel: #151a23; --borde: #262d3a; --texto: #d7dde8; --tenue: #8a94a6;
+    --acento: #ffd166; --pos: #ff9f1c; --neg: #3b9cff; --ok: #4ade80; --mal: #f87171;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--fondo); color: var(--texto);
+    font: 13px/1.35 system-ui, "Segoe UI", sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 10px; display: grid; gap: 10px; }
+  .panel { background: var(--panel); border: 1px solid var(--borde); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+  h2 { margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--tenue); }
+  h2 small { text-transform: none; letter-spacing: 0; font-weight: 400; margin-left: 6px; }
+  canvas { display: block; width: 100%; }
+  .num { font-variant-numeric: tabular-nums; font-family: Consolas, "Cascadia Mono", monospace; }
+  #cabecera { display: grid; grid-template-columns: auto 1fr 1fr auto auto; gap: 14px; align-items: center; }
+  #jefe { font-size: 18px; font-weight: 700; }
+  #fase { margin-left: 6px; font-size: 11px; padding: 1px 7px; border-radius: 9px; border: 1px solid var(--borde); color: var(--tenue); }
+  .barra { height: 12px; background: #0b0e13; border: 1px solid var(--borde); border-radius: 6px; overflow: hidden; }
+  .barra > i { display: block; height: 100%; width: 0; transition: width .12s linear; }
+  #hpJugador > i { background: var(--ok); } #hpJefe > i { background: var(--mal); }
+  .etq { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; color: var(--tenue); margin-bottom: 2px; }
+  #caguamas { font-size: 15px; letter-spacing: 2px; white-space: nowrap; }
+  #estado { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--tenue); white-space: nowrap; }
+  #punto { width: 9px; height: 9px; border-radius: 50%; background: var(--mal); }
+  #punto.vivo { background: var(--ok); } #punto.espera { background: var(--acento); }
+  #aviso { grid-column: 1 / -1; display: none; font-size: 15px; font-weight: 700; text-align: center; padding: 3px; border-radius: 6px; }
+  #aviso.victoria { display: block; background: #3a3210; color: #fde047; }
+  #aviso.muerte { display: block; background: #3a1414; color: #fca5a5; }
+  #fila2 { display: grid; grid-template-columns: 250px 250px 1fr; gap: 10px; }
+  #fila3 { display: grid; grid-template-columns: 250px 1fr; gap: 10px; }
+  .doble { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .dato { margin-top: 6px; font-size: 11px; color: var(--tenue); }
+  .leyenda { display: flex; gap: 10px; flex-wrap: wrap; font-size: 11px; color: var(--tenue); margin-top: 4px; }
+  .leyenda span::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 4px; border-radius: 2px; background: var(--c); vertical-align: -1px; }
+  #escala { height: 8px; border-radius: 4px; margin-top: 6px;
+    background: linear-gradient(90deg, #3b9cff, #181c26 50%, #ff9f1c); }
+  .escala-txt { display: flex; justify-content: space-between; font-size: 10px; color: var(--tenue); }
+  #tip { position: fixed; pointer-events: none; display: none; background: #000d; border: 1px solid var(--borde);
+    padding: 2px 6px; border-radius: 4px; font-size: 11px; z-index: 9; }
+</style>
+</head>
+<body>
+<main>
+  <section id="cabecera" class="panel">
+    <div><span id="jefe">Esperando la pelea</span><span id="fase" class="num"></span>
+      <div class="dato" id="modelo"></div></div>
+    <div><div class="etq"><span>Jugador</span><span class="num" id="txtJugador"></span></div>
+      <div class="barra" id="hpJugador"><i></i></div></div>
+    <div><div class="etq"><span>Jefe</span><span class="num" id="txtJefe"></span></div>
+      <div class="barra" id="hpJefe"><i></i></div></div>
+    <div><div class="etq"><span>Caguamas</span><span class="num" id="reloj">0:00</span></div>
+      <div id="caguamas"></div></div>
+    <div id="estado"><span id="punto"></span><span id="txtEstado" class="num">desconectado</span></div>
+    <div id="aviso"></div>
+  </section>
+
+  <section id="fila2">
+    <div class="panel"><h2>Neuronas <small id="tCapa0">politica, capa 1</small></h2>
+      <canvas id="g0"></canvas><div class="dato num" id="s0"></div>
+      <div id="escala"></div><div class="escala-txt"><span>-1</span><span>0</span><span>+1</span></div></div>
+    <div class="panel"><h2>Neuronas <small id="tCapa1">politica, capa 2</small></h2>
+      <canvas id="g1"></canvas><div class="dato num" id="s1"></div>
+      <div class="dato">Escala fija por capa: el color de una neurona significa lo mismo en todos los cuadros.</div></div>
+    <div class="panel"><h2>Intencion <small>probabilidad de cada accion</small></h2>
+      <canvas id="intencion"></canvas>
+      <div class="leyenda"><span style="--c:#ffd166">elegida</span><span style="--c:#4cc9f0">posible</span><span style="--c:#3a3f4b">no disponible</span></div>
+      <div class="dato">N = hacia el jefe; E = a su derecha.</div></div>
+  </section>
+
+  <section id="fila3">
+    <div class="panel"><h2>Red de valor <small>secundaria</small></h2>
+      <div class="doble"><canvas id="v0"></canvas><canvas id="v1"></canvas></div>
+      <div class="dato num" id="sv"></div></div>
+    <div class="panel"><h2>Atencion <small id="tAtencion">entradas que mas pesaron</small></h2>
+      <canvas id="atencion"></canvas>
+      <div class="leyenda"><span style="--c:#ff9f1c">empuja hacia la accion elegida</span><span style="--c:#3b9cff">empuja en contra</span></div></div>
+  </section>
+
+  <section class="panel"><h2>Confianza <small>valor estimado V(s), ultimos 20 s</small></h2>
+    <canvas id="grafica"></canvas>
+    <div class="leyenda"><span style="--c:#4ade80">parry</span><span style="--c:#f87171">golpe recibido</span>
+      <span style="--c:#fbbf24">caguama</span><span style="--c:#c084fc">cambio de fase</span>
+      <span style="--c:#fde047">victoria</span><span style="--c:#e5e7eb">muerte</span></div>
+  </section>
+</main>
+<div id="tip" class="num"></div>
+
+<script>
+"use strict";
+const COLORES_EVENTO = { parry: "#4ade80", golpe: "#f87171", caguama: "#fbbf24", fase: "#c084fc",
+                         victoria: "#fde047", muerte: "#e5e7eb" };
+const NEUTRO = [24, 28, 38], POSITIVO = [255, 159, 28], NEGATIVO = [59, 156, 255];
+const MAX_ANTIGUEDAD_MS = 2500;
+
+const estado = { cfg: null, cuadro: null, valores: [], eventos: [], ultimoPaso: 0, recibidos: 0,
+                 recibidosSeg: 0, calculoMs: 0, ultimoCuadroMs: 0, sucio: false, aviso: 0, socket: null };
+const $ = (id) => document.getElementById(id);
+
+/* ---------- utilidades de dibujo ---------- */
+function preparar(canvas, alto) {
+  const dpr = window.devicePixelRatio || 1;
+  const ancho = canvas.clientWidth;
+  if (canvas.width !== Math.round(ancho * dpr) || canvas.height !== Math.round(alto * dpr)) {
+    canvas.width = Math.round(ancho * dpr); canvas.height = Math.round(alto * dpr);
+    canvas.style.height = alto + "px";
+  }
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, ancho, alto);
+  return [ctx, ancho];
+}
+function mezcla(a, b, t) { return `rgb(${Math.round(a[0] + (b[0] - a[0]) * t)},${Math.round(a[1] + (b[1] - a[1]) * t)},${Math.round(a[2] + (b[2] - a[2]) * t)})`; }
+function colorDivergente(v, escala) {
+  const t = Math.max(-1, Math.min(1, v / escala));
+  return t >= 0 ? mezcla(NEUTRO, POSITIVO, t) : mezcla(NEUTRO, NEGATIVO, -t);
+}
+function recortar(ctx, texto, ancho) {
+  if (ctx.measureText(texto).width <= ancho) return texto;
+  while (texto.length > 1 && ctx.measureText(texto + "...").width > ancho) texto = texto.slice(0, -1);
+  return texto + "...";
+}
+
+/* ---------- cuadriculas de neuronas ---------- */
+function dibujarCuadricula(canvas, valores, escala) {
+  const n = valores.length, columnas = Math.ceil(Math.sqrt(n)), filas = Math.ceil(n / columnas);
+  const lado = canvas.clientWidth / columnas;
+  const [ctx] = preparar(canvas, lado * filas);
+  for (let i = 0; i < n; i++) {
+    ctx.fillStyle = colorDivergente(valores[i], escala);
+    ctx.fillRect((i % columnas) * lado + .5, Math.floor(i / columnas) * lado + .5, lado - 1, lado - 1);
+  }
+  canvas._geom = { columnas, lado, valores };
+}
+function estadisticaCapa(valores, escala) {
+  let activas = 0, saturadas = 0;
+  for (const v of valores) { const a = Math.abs(v) / escala; if (a > .5) activas++; if (a > .9) saturadas++; }
+  return `|a|>0.5: ${activas}   saturadas |a|>0.9: ${saturadas}   de ${valores.length}`;
+}
+function conTooltip(canvas, nombre) {
+  canvas.addEventListener("mousemove", (e) => {
+    const g = canvas._geom; if (!g) return;
+    const r = canvas.getBoundingClientRect();
+    const c = Math.floor((e.clientX - r.left) / g.lado), f = Math.floor((e.clientY - r.top) / g.lado);
+    const i = f * g.columnas + c, tip = $("tip");
+    if (c < 0 || c >= g.columnas || i < 0 || i >= g.valores.length) { tip.style.display = "none"; return; }
+    tip.textContent = `${nombre} #${i}: ${g.valores[i].toFixed(2)}`;
+    tip.style.display = "block"; tip.style.left = e.clientX + 12 + "px"; tip.style.top = e.clientY + 12 + "px";
+  });
+  canvas.addEventListener("mouseleave", () => { $("tip").style.display = "none"; });
+}
+
+/* ---------- intencion ---------- */
+function dibujarIntencion(c) {
+  const FILA = 15, n = c.probabilidades.length;
+  const [ctx, ancho] = preparar($("intencion"), FILA * n);
+  const xBarra = 92, largo = ancho - xBarra - 38;
+  ctx.font = "11px system-ui, sans-serif"; ctx.textBaseline = "middle";
+  const nombres = estado.cfg ? estado.cfg.acciones : c.probabilidades.map((_, i) => "accion " + i);
+  for (let i = 0; i < n; i++) {
+    const y = i * FILA, p = c.probabilidades[i], disponible = c.mascara[i], elegida = i === c.accionElegida;
+    if (i === 1 || i === 9 || i === 17) { ctx.fillStyle = "#262d3a"; ctx.fillRect(0, y, ancho, 1); }
+    ctx.fillStyle = elegida ? "#ffd166" : disponible ? "#d7dde8" : "#5a6272";
+    ctx.font = (elegida ? "bold " : "") + "11px system-ui, sans-serif";
+    ctx.fillText(nombres[i], 2, y + FILA / 2);
+    ctx.fillStyle = "#0b0e13"; ctx.fillRect(xBarra, y + 3, largo, FILA - 6);
+    if (!disponible) {
+      ctx.fillStyle = "#3a3f4b"; ctx.fillRect(xBarra, y + 3, largo, FILA - 6);
+      ctx.fillStyle = "#7b8496"; ctx.font = "10px system-ui"; ctx.fillText("no disp.", xBarra + 4, y + FILA / 2);
+    } else {
+      ctx.fillStyle = elegida ? "#ffd166" : "#4cc9f0";
+      ctx.fillRect(xBarra, y + 3, Math.max(p * largo, p > 0 ? 1 : 0), FILA - 6);
+      ctx.fillStyle = elegida ? "#ffd166" : "#8a94a6"; ctx.font = "10px Consolas, monospace";
+      ctx.fillText((p * 100).toFixed(p < 0.1 ? 1 : 0) + "%", xBarra + largo + 4, y + FILA / 2);
+    }
+  }
+}
+
+/* ---------- atencion ---------- */
+function dibujarAtencion(c) {
+  const FILA = 30, filas = Math.max(c.atencion.length, 1);
+  const [ctx, ancho] = preparar($("atencion"), FILA * 10);
+  ctx.textBaseline = "alphabetic";
+  const maximo = Math.max(...c.atencion.map((a) => Math.abs(a.atribucion)), 1e-9);
+  const centro = ancho * 0.62, medio = ancho * 0.36;
+  ctx.fillStyle = "#262d3a"; ctx.fillRect(centro, 0, 1, FILA * 10);
+  c.atencion.forEach((a, i) => {
+    const y = i * FILA, w = Math.abs(a.atribucion) / maximo * medio;
+    ctx.fillStyle = "#d7dde8"; ctx.font = "11px system-ui, sans-serif";
+    ctx.fillText(recortar(ctx, a.etiqueta, ancho * 0.58), 2, y + 12);
+    ctx.fillStyle = "#ffd166"; ctx.font = "bold 11px Consolas, monospace";
+    ctx.fillText(a.valorTexto, 2, y + 25);
+    ctx.fillStyle = a.atribucion >= 0 ? "#ff9f1c" : "#3b9cff";
+    ctx.fillRect(a.atribucion >= 0 ? centro : centro - w, y + 8, Math.max(w, 1), 14);
+  });
+}
+
+/* ---------- confianza ---------- */
+function dibujarGrafica() {
+  const ALTO = 170, canvas = $("grafica");
+  const [ctx, ancho] = preparar(canvas, ALTO);
+  const ventana = estado.cfg ? estado.cfg.segundosHistorial : 20;
+  const margenI = 46, margenD = 8, arriba = 8, abajo = 20;
+  const w = ancho - margenI - margenD, h = ALTO - arriba - abajo;
+  const tMax = estado.valores.length ? estado.valores[estado.valores.length - 1][0] : 0;
+  const t0 = tMax - ventana;
+  const visibles = estado.valores.filter((p) => p[0] >= t0);
+  ctx.fillStyle = "#0b0e13"; ctx.fillRect(margenI, arriba, w, h);
+  if (!visibles.length) return;
+  let min = Math.min(...visibles.map((p) => p[1])), max = Math.max(...visibles.map((p) => p[1]));
+  if (max - min < 0.05) { const m = (max + min) / 2; min = m - 0.025; max = m + 0.025; }
+  const holgura = (max - min) * 0.08; min -= holgura; max += holgura;
+  const X = (t) => margenI + (t - t0) / ventana * w, Y = (v) => arriba + (1 - (v - min) / (max - min)) * h;
+  ctx.font = "10px Consolas, monospace"; ctx.fillStyle = "#8a94a6"; ctx.textBaseline = "middle";
+  for (let k = 0; k <= 4; k++) {
+    const v = min + (max - min) * k / 4, y = Y(v);
+    ctx.fillStyle = "#1c2230"; ctx.fillRect(margenI, y, w, 1);
+    ctx.fillStyle = "#8a94a6"; ctx.textAlign = "right"; ctx.fillText(v.toFixed(2), margenI - 4, y);
+  }
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  for (let s = 0; s <= ventana; s += 5) { ctx.textAlign = s === ventana ? "right" : "center"; ctx.fillText(s === ventana ? "ahora" : `-${ventana - s}s`, X(t0 + s) + (s === ventana ? 6 : 0), ALTO - abajo + 4); }
+  for (const e of estado.eventos) {
+    if (e.t < t0) continue;
+    const grueso = e.tipo === "victoria" || e.tipo === "muerte";
+    ctx.fillStyle = COLORES_EVENTO[e.tipo] || "#fff"; ctx.globalAlpha = grueso ? .9 : .55;
+    ctx.fillRect(X(e.t) - (grueso ? 1.5 : .5), arriba, grueso ? 3 : 1, h);
+    ctx.globalAlpha = 1;
+  }
+  ctx.strokeStyle = "#ffd166"; ctx.lineWidth = 1.6; ctx.beginPath();
+  visibles.forEach((p, i) => (i ? ctx.lineTo(X(p[0]), Y(p[1])) : ctx.moveTo(X(p[0]), Y(p[1]))));
+  ctx.stroke();
+  const ultimo = visibles[visibles.length - 1];
+  ctx.fillStyle = "#ffd166"; ctx.beginPath(); ctx.arc(X(ultimo[0]), Y(ultimo[1]), 3, 0, 7); ctx.fill();
+  ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.font = "bold 11px Consolas, monospace";
+  ctx.fillText("V = " + ultimo[1].toFixed(3), margenI + 6, arriba + 4);
+}
+
+/* ---------- cabecera ---------- */
+function tiempoTexto(s) { const m = Math.floor(s / 60); return `${m}:${String(Math.floor(s % 60)).padStart(2, "0")}`; }
+function actualizarCabecera(c) {
+  const e = c.encabezado;
+  $("jefe").textContent = e.jefe; $("fase").textContent = "fase " + e.fase;
+  const pj = e.vidaJugadorMax > 0 ? e.vidaJugador / e.vidaJugadorMax : 0;
+  const pb = e.vidaJefeMax > 0 ? e.vidaJefe / e.vidaJefeMax : 0;
+  $("hpJugador").firstElementChild.style.width = (pj * 100).toFixed(1) + "%";
+  $("hpJefe").firstElementChild.style.width = (pb * 100).toFixed(1) + "%";
+  $("txtJugador").textContent = `${e.vidaJugador.toFixed(0)} / ${e.vidaJugadorMax.toFixed(0)}`;
+  $("txtJefe").textContent = `${e.vidaJefe.toFixed(0)} / ${e.vidaJefeMax.toFixed(0)}`;
+  $("caguamas").textContent = "\u{1F37A}".repeat(Math.max(e.caguamas, 0)) || "-";
+  $("reloj").textContent = tiempoTexto(e.tiempoPelea);
+}
+
+/* ---------- ciclo de dibujo ---------- */
+function dibujar() {
+  const c = estado.cuadro;
+  if (c && estado.cfg) {
+    const escala = estado.cfg.escalaColor;
+    actualizarCabecera(c);
+    c.activacionesPolitica.slice(0, 2).forEach((capa, i) => {
+      dibujarCuadricula($("g" + i), capa, escala); $("s" + i).textContent = estadisticaCapa(capa, escala);
+    });
+    c.activacionesValor.slice(0, 2).forEach((capa, i) => dibujarCuadricula($("v" + i), capa, escala));
+    $("sv").textContent = "V(s) = " + c.valorEstimado.toFixed(3);
+    dibujarIntencion(c); dibujarAtencion(c);
+    $("tAtencion").textContent = "para: " + (estado.cfg.acciones[c.accionElegida] || c.accionElegida);
+  }
+  dibujarGrafica();
+}
+function ciclo() {
+  if (estado.sucio) { estado.sucio = false; dibujar(); }
+  const ahora = performance.now();
+  if (estado.aviso && ahora > estado.aviso) { estado.aviso = 0; $("aviso").className = ""; $("aviso").textContent = ""; }
+  requestAnimationFrame(ciclo);
+}
+function marcarEstado() {
+  const abierto = estado.socket && estado.socket.readyState === 1;
+  const reciente = performance.now() - estado.ultimoCuadroMs < MAX_ANTIGUEDAD_MS;
+  $("punto").className = !abierto ? "" : reciente ? "vivo" : "espera";
+  const calculo = estado.calculoMs.toFixed(1);
+  $("txtEstado").textContent = !abierto ? "desconectado"
+    : reciente ? `${estado.recibidosSeg.toFixed(0)} cuadros/s, calculo ${calculo} ms` : "conectado, sin pelea";
+}
+
+/* ---------- mensajes ---------- */
+function alRecibir(m) {
+  if (m.tipo === "configuracion") {
+    estado.cfg = m;
+    $("modelo").textContent = `${m.modelo} / ${m.jefe} / ${m.activacion}`;
+    $("tCapa0").textContent = `politica, capa 1 (${m.capasPolitica[0]})`;
+    $("tCapa1").textContent = `politica, capa 2 (${m.capasPolitica[1] ?? "-"})`;
+  } else if (m.tipo === "historial") {
+    estado.valores = m.valores; estado.eventos = m.eventos;
+  } else if (m.tipo === "cuadro") {
+    if (m.paso <= estado.ultimoPaso) { estado.valores = []; estado.eventos = []; }
+    estado.ultimoPaso = m.paso; estado.cuadro = m; estado.recibidos++;
+    estado.ultimoCuadroMs = performance.now(); estado.calculoMs = m.milisegundosCalculo;
+    const t = m.encabezado.tiempoPelea;
+    estado.valores.push([t, m.valorEstimado]);
+    for (const e of m.eventos) estado.eventos.push({ t, tipo: e.tipo, detalle: e.detalle });
+    const limite = t - (estado.cfg ? estado.cfg.segundosHistorial : 20) - 2;
+    while (estado.valores.length && estado.valores[0][0] < limite) estado.valores.shift();
+    estado.eventos = estado.eventos.filter((e) => e.t >= limite);
+    estado.sucio = true;
+  } else if (m.tipo === "fin") {
+    estado.eventos.push({ t: m.tiempoPelea, tipo: m.hito.tipo, detalle: m.hito.detalle });
+    const gano = m.hito.tipo === "victoria";
+    $("aviso").className = gano ? "victoria" : "muerte";
+    $("aviso").textContent = gano ? "VICTORIA" : "DERROTA";
+    estado.aviso = performance.now() + 6000; estado.sucio = true;
+  }
+}
+function conectar() {
+  const socket = new WebSocket(`ws://${location.host}/ws`);
+  estado.socket = socket;
+  socket.onmessage = (ev) => { try { alRecibir(JSON.parse(ev.data)); } catch (error) { console.error(error); } };
+  socket.onclose = () => { marcarEstado(); setTimeout(conectar, 1000); };
+  socket.onerror = () => socket.close();
+}
+
+conTooltip($("g0"), "politica capa 1"); conTooltip($("g1"), "politica capa 2");
+conTooltip($("v0"), "valor capa 1"); conTooltip($("v1"), "valor capa 2");
+setInterval(() => { estado.recibidosSeg = estado.recibidos; estado.recibidos = 0; marcarEstado(); }, 1000);
+window.addEventListener("resize", () => { estado.sucio = true; });
+conectar(); requestAnimationFrame(ciclo); dibujarGrafica();
+</script>
+</body>
+</html>

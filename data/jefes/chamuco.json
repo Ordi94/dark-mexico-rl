@@ -1,0 +1,240 @@
+{
+ "id": "chamuco",
+ "nombre": "Chamuco",
+ "mapa": "LVL_AMLO",
+ "indice": 3,
+ "clases": [
+  "BP_Chamuco_C"
+ ],
+ "vida_max": 1500.0,
+ "fase_avanzada": true,
+ "reacciones": [
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage"
+ ],
+ "alcance_defecto": 350.0,
+ "vocabulario": [
+  "1HM_AerialSwing01_2HitCombo_Montage",
+  "1HM_AerialSwing01_Forward_Montage",
+  "Anim_CK3_ComboE_01_RM_Montage1",
+  "Anim_Spear_JumpAttackA_RM_Montage",
+  "Anim_SwordV2_Combo02_RM_Montage",
+  "Anim_SwordV2_Slash_RM_Montage",
+  "Anim_Sword_Attack_Slash03_Root_Montage",
+  "Anim_Sword_Attack_Slash03_Root_Montage1",
+  "Anim_Sword_Evade_B_Root_Montage",
+  "Boss_Attack_Uppercut_InP_Montage1",
+  "Boss_Attack_Uppercut_InP_Montage2",
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage"
+ ],
+ "golpes": {
+  "1HM_AerialSwing01_2HitCombo_Montage": [
+   {
+    "pos": 0.567,
+    "min": 0.567,
+    "max": 0.567,
+    "parry": true,
+    "dano": 30.0,
+    "n": 17,
+    "alcance": 150.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.365,
+    "min": 1.365,
+    "max": 1.365,
+    "parry": true,
+    "dano": 30.0,
+    "n": 12,
+    "alcance": 110.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "1HM_AerialSwing01_Forward_Montage": [
+   {
+    "pos": 0.937,
+    "min": 0.937,
+    "max": 0.937,
+    "parry": true,
+    "dano": 30.0,
+    "n": 6,
+    "alcance": 80.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboE_01_RM_Montage1": [
+   {
+    "pos": 0.608,
+    "min": 0.608,
+    "max": 0.608,
+    "parry": true,
+    "dano": 30.0,
+    "n": 12,
+    "alcance": 90.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Spear_JumpAttackA_RM_Montage": [
+   {
+    "pos": 0.8,
+    "min": 0.8,
+    "max": 0.8,
+    "parry": false,
+    "dano": 40.0,
+    "n": 19,
+    "alcance": 6000.0,
+    "tipo": "area",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_SwordV2_Combo02_RM_Montage": [
+   {
+    "pos": 0.336,
+    "min": 0.336,
+    "max": 0.336,
+    "parry": true,
+    "dano": 30.0,
+    "n": 10,
+    "alcance": 140.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 0.694,
+    "min": 0.694,
+    "max": 0.694,
+    "parry": true,
+    "dano": 30.0,
+    "n": 9,
+    "alcance": 120.0,
+    "tipo": "melee"
+   }
+  ],
+  "Anim_SwordV2_Slash_RM_Montage": [
+   {
+    "pos": 0.891,
+    "min": 0.891,
+    "max": 0.891,
+    "parry": true,
+    "dano": 35.0,
+    "n": 3,
+    "alcance": 120.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Sword_Attack_Slash03_Root_Montage": [
+   {
+    "pos": 0.707,
+    "min": 0.707,
+    "max": 0.707,
+    "parry": true,
+    "dano": 35.0,
+    "n": 4,
+    "alcance": 80.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Sword_Attack_Slash03_Root_Montage1": [
+   {
+    "pos": 1.241,
+    "min": 1.241,
+    "max": 1.241,
+    "parry": true,
+    "dano": 35.0,
+    "n": 4,
+    "alcance": 120.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_Uppercut_InP_Montage1": [
+   {
+    "pos": 0.895,
+    "min": 0.895,
+    "max": 0.895,
+    "parry": true,
+    "dano": 35.0,
+    "n": 20,
+    "alcance": 180.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_Uppercut_InP_Montage2": [
+   {
+    "pos": 1.74,
+    "min": 1.74,
+    "max": 1.74,
+    "parry": true,
+    "dano": 35.0,
+    "n": 7,
+    "alcance": 170.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ]
+ },
+ "eventos_distancia": {},
+ "episodio": {
+  "via": "chamuco",
+  "start_phase": 2,
+  "vida_fase1": 0.0,
+  "vida_fase2": 1500.0,
+  "clases_victoria": [
+   "BP_Chamuco_C"
+  ],
+  "mod": {
+   "id": "chamuco",
+   "map": "LVL_AMLO",
+   "classes": [
+    "BP_Chamuco_C"
+   ],
+   "purge": [
+    "BP_AMLOBOSS_C",
+    "BP_Chamuco_C",
+    "BP_CHUPACABRAS_C"
+   ],
+   "start": {
+    "kind": "spawn_class",
+    "class_path": "/Game/BP_Chamuco.BP_Chamuco_C",
+    "pos": {
+     "x": -5606.0,
+     "y": -1800.0,
+     "z": 11293.0
+    },
+    "hp": 1500,
+    "player_offset": {
+     "x": 450.0,
+     "y": 0.0,
+     "z": -90.0
+    }
+   },
+   "hooks": [
+    {
+     "path": "/Game/BP_Chamuco.BP_Chamuco_C:death",
+     "event": "victory"
+    },
+    {
+     "path": "/Game/BP_Chamuco.BP_Chamuco_C:Ataque ESPECIAL GOLPE PISO LAVA",
+     "event": "remote",
+     "id": "chamuco_lava"
+    }
+   ],
+   "minors": [
+    "BP_ChairosOP_C",
+    "BP_Ghoul_C",
+    "BP_Chairos_C"
+   ]
+  }
+ },
+ "bot": {
+  "especial_seguro": 2.7
+ }
+}

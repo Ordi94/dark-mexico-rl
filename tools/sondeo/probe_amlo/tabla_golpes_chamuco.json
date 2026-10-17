@@ -1,0 +1,179 @@
+{
+ "1HM_AerialSwing01_2HitCombo_Montage": [
+  {
+   "pos": 0.567,
+   "min": 0.567,
+   "max": 0.567,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 3,
+   "rate": 1.0,
+   "duracion": 2.033
+  },
+  {
+   "pos": 1.365,
+   "min": 1.365,
+   "max": 1.365,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 3,
+   "rate": 1.0,
+   "duracion": 2.033
+  }
+ ],
+ "1HM_AerialSwing01_Forward_Montage": [
+  {
+   "pos": 0.937,
+   "min": 0.937,
+   "max": 0.937,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 5,
+   "rate": 1.0,
+   "duracion": 3.0
+  }
+ ],
+ "Anim_CK3_ComboE_01_RM_Montage1": [
+  {
+   "pos": 0.608,
+   "min": 0.608,
+   "max": 0.608,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 5,
+   "rate": 1.0,
+   "duracion": 1.5
+  }
+ ],
+ "Anim_Spear_JumpAttackA_RM_Montage": [
+  {
+   "pos": 0.8,
+   "min": 0.8,
+   "max": 0.8,
+   "parry": false,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 19,
+   "rate": 1.0,
+   "duracion": 1.4,
+   "nota": "Ataque ESPECIAL GOLPE PISO LAVA: onda de area, golpea hasta ~770 uu y puede impactar dos veces en el mismo frame; el jefe lo encadena 4-5 veces cada 1.5 s"
+  }
+ ],
+ "Anim_SwordV2_Combo02_RM_Montage": [
+  {
+   "pos": 0.336,
+   "min": 0.336,
+   "max": 0.336,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 3,
+   "rate": 1.0,
+   "duracion": 2.167
+  },
+  {
+   "pos": 0.694,
+   "min": 0.694,
+   "max": 0.694,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 2,
+   "rate": 1.0,
+   "duracion": 2.167
+  }
+ ],
+ "Anim_SwordV2_Slash_RM_Montage": [
+  {
+   "pos": 0.891,
+   "min": 0.891,
+   "max": 0.891,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 2.567
+  }
+ ],
+ "Anim_Sword_Attack_Slash03_Root_Montage": [
+  {
+   "pos": 0.707,
+   "min": 0.707,
+   "max": 0.707,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 4,
+   "rate": 1.0,
+   "duracion": 2.161
+  }
+ ],
+ "Anim_Sword_Attack_Slash03_Root_Montage1": [
+  {
+   "pos": 1.241,
+   "min": 1.241,
+   "max": 1.241,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 2.656
+  }
+ ],
+ "Boss_Attack_Uppercut_InP_Montage1": [
+  {
+   "pos": 0.895,
+   "min": 0.895,
+   "max": 0.895,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 11,
+   "rate": 1.0,
+   "duracion": 4.052
+  }
+ ],
+ "Boss_Attack_Uppercut_InP_Montage2": [
+  {
+   "pos": 1.74,
+   "min": 1.74,
+   "max": 1.74,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 3,
+   "rate": 1.0,
+   "duracion": 4.877
+  }
+ ]
+}

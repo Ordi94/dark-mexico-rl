@@ -1,0 +1,399 @@
+{
+ "id": "juice",
+ "nombre": "Juice",
+ "mapa": "LVL_Boss",
+ "indice": 0,
+ "clases": [
+  "BP_Enemy_Juice_C"
+ ],
+ "vida_max": 2000.0,
+ "fase_avanzada": false,
+ "reacciones": [
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage"
+ ],
+ "alcance_defecto": 350.0,
+ "vocabulario": [
+  "ANIM_CARPET_Montage",
+  "A_spear_1hand04_ThrowMid01_Montage",
+  "Anim_Spear_JumpAttackA_RM_Montage",
+  "Anim_SwordV2_Combo03_01_RM_Montage1",
+  "Anim_SwordV2_Combo03_01_RM_Montage2",
+  "Anim_SwordV2_Combo04_IP_Montage",
+  "Anim_SwordV2_Hit_Middle_F_RM_Montage",
+  "Anim_SwordV2_Hit_Small_L_RM_Montage",
+  "Anim_SwordV2_Hit_Small_R_RM_Montage",
+  "Anim_Sword_Air_Attack1_InPlace_Montage",
+  "Anim_Sword_Air_Attack2_InPlace_Montage",
+  "Anim_Sword_Air_ComboAttack_InPlace_Montage",
+  "Anim_Sword_Attack_Stab01_Root_Cargada",
+  "Anim_Sword_Evade_B_Root_Montage",
+  "Boss_Attack_ChargedCombo_InP_Montage",
+  "Boss_Attack_ChargedCombo_InP_Montage1",
+  "Boss_Attack_HandAndSwordSwing_InP_Montage",
+  "Boss_Attack_Running_Simple_InP_Montage",
+  "Boss_Attack_SwingAndSlam_InP_Montage",
+  "Boss_Attack_Uppercut_InP_Montage",
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage",
+  "NinjaBackEvade_Montage"
+ ],
+ "golpes": {
+  "Anim_SwordV2_Combo03_01_RM_Montage1": [
+   {
+    "pos": 2.217,
+    "min": 2.117,
+    "max": 2.217,
+    "parry": false,
+    "dano": 40.0,
+    "n": 19,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 3.217,
+    "min": 3.217,
+    "max": 3.217,
+    "parry": false,
+    "dano": 40.0,
+    "n": 21,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 4.217,
+    "min": 4.217,
+    "max": 4.217,
+    "parry": false,
+    "dano": 40.0,
+    "n": 20,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 5.217,
+    "min": 5.217,
+    "max": 5.217,
+    "parry": false,
+    "dano": 40.0,
+    "n": 16,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 6.217,
+    "min": 6.133,
+    "max": 6.217,
+    "parry": false,
+    "dano": 40.0,
+    "n": 11,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 7.183,
+    "min": 6.983,
+    "max": 7.183,
+    "parry": false,
+    "dano": 40.0,
+    "n": 10,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 8.083,
+    "min": 8.083,
+    "max": 8.183,
+    "parry": false,
+    "dano": 40.0,
+    "n": 3,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_SwordV2_Combo03_01_RM_Montage2": [
+   {
+    "pos": 0.683,
+    "min": 0.683,
+    "max": 0.683,
+    "parry": false,
+    "dano": 35.0,
+    "n": 329,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Sword_Air_Attack1_InPlace_Montage": [
+   {
+    "pos": 0.558,
+    "min": 0.558,
+    "max": 0.558,
+    "parry": false,
+    "dano": 35.0,
+    "n": 23,
+    "alcance": 410.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Sword_Air_Attack2_InPlace_Montage": [
+   {
+    "pos": 0.65,
+    "min": 0.55,
+    "max": 0.717,
+    "parry": false,
+    "dano": 35.0,
+    "n": 12,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.083,
+    "min": 1.017,
+    "max": 1.117,
+    "parry": false,
+    "dano": 35.0,
+    "n": 3,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Sword_Air_ComboAttack_InPlace_Montage": [
+   {
+    "pos": 0.683,
+    "min": 0.65,
+    "max": 0.75,
+    "parry": false,
+    "dano": 35.0,
+    "n": 12,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.05,
+    "min": 0.917,
+    "max": 1.117,
+    "parry": false,
+    "dano": 35.0,
+    "n": 5,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.717,
+    "min": 1.683,
+    "max": 1.917,
+    "parry": false,
+    "dano": 35.0,
+    "n": 16,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 2.033,
+    "min": 1.967,
+    "max": 2.067,
+    "parry": false,
+    "dano": 35.0,
+    "n": 5,
+    "alcance": 840.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Sword_Attack_Stab01_Root_Cargada": [
+   {
+    "pos": 1.543,
+    "min": 1.543,
+    "max": 1.543,
+    "parry": true,
+    "dano": 35.0,
+    "n": 10,
+    "alcance": 260.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_ChargedCombo_InP_Montage": [
+   {
+    "pos": 0.713,
+    "min": 0.713,
+    "max": 0.713,
+    "parry": true,
+    "dano": 25.0,
+    "n": 36,
+    "alcance": 430.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.205,
+    "min": 1.205,
+    "max": 1.205,
+    "parry": true,
+    "dano": 25.0,
+    "n": 22,
+    "alcance": 130.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.836,
+    "min": 1.836,
+    "max": 1.836,
+    "parry": true,
+    "dano": 25.0,
+    "n": 23,
+    "alcance": 130.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 2.838,
+    "min": 2.838,
+    "max": 2.838,
+    "parry": false,
+    "dano": 40.0,
+    "n": 23,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_ChargedCombo_InP_Montage1": [
+   {
+    "pos": 0.713,
+    "min": 0.713,
+    "max": 0.713,
+    "parry": true,
+    "dano": 25.0,
+    "n": 15,
+    "alcance": 140.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.178,
+    "min": 1.178,
+    "max": 1.178,
+    "parry": true,
+    "dano": 25.0,
+    "n": 10,
+    "alcance": 140.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.916,
+    "min": 1.916,
+    "max": 1.916,
+    "parry": true,
+    "dano": 25.0,
+    "n": 11,
+    "alcance": 140.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 3.468,
+    "min": 3.468,
+    "max": 3.468,
+    "parry": false,
+    "dano": 40.0,
+    "n": 11,
+    "alcance": 130.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_Running_Simple_InP_Montage": [
+   {
+    "pos": 1.793,
+    "min": 1.793,
+    "max": 1.793,
+    "parry": false,
+    "dano": 35.0,
+    "n": 10,
+    "alcance": 90.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_SwingAndSlam_InP_Montage": [
+   {
+    "pos": 1.844,
+    "min": 1.844,
+    "max": 1.844,
+    "parry": true,
+    "dano": 25.0,
+    "n": 16,
+    "alcance": 130.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 4.175,
+    "min": 4.175,
+    "max": 4.175,
+    "parry": false,
+    "dano": 30.0,
+    "n": 15,
+    "alcance": 130.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Boss_Attack_Uppercut_InP_Montage": [
+   {
+    "pos": 0.895,
+    "min": 0.895,
+    "max": 0.895,
+    "parry": true,
+    "dano": 10.0,
+    "n": 19,
+    "alcance": 180.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ]
+ },
+ "eventos_distancia": {},
+ "episodio": {
+  "via": "juice",
+  "start_phase": 1,
+  "vida_fase1": 1700.0,
+  "vida_fase2": 1000.0,
+  "clases_victoria": [
+   "BP_Enemy_JuicePhase2_C"
+  ],
+  "mod": {
+   "id": "juice",
+   "map": "LVL_Boss",
+   "classes": [
+    "BP_Enemy_Juice_C",
+    "BP_Enemy_JuicePhase2_C"
+   ],
+   "purge": [
+    "BP_Enemy_Juice_C",
+    "BP_Enemy_JuicePhase2_C"
+   ],
+   "start": {
+    "kind": "legacy_fog"
+   },
+   "hooks": []
+  }
+ }
+}

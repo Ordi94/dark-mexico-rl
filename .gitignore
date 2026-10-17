@@ -1,0 +1,35 @@
+# Entornos y cachés de Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Resultados de entrenamiento, modelos y datos (los modelos se publican como Release)
+runs/
+*.zip
+*.npz
+*.pt
+*.tfevents*
+*.log
+bench_results/
+bridge_logs/
+probe_out/
+tools/sondeo/salida/
+backup_savegames_*/
+
+# Material de proceso y configuración local que no forma parte del código
+pipeline/
+observabilidad/
+
+# Editor y sistema
+.vscode/
+.idea/
+Thumbs.db

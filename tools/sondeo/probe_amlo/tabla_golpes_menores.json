@@ -1,0 +1,96 @@
+{
+ "BP_ChairosOP_C": {
+  "Anim_CK3_ComboA_01_RM_Montage": [
+   {
+    "pos": 0.668,
+    "min": 0.668,
+    "max": 0.668,
+    "parry": true,
+    "dano": 40.0,
+    "danos": [
+     40.0
+    ],
+    "n": 4,
+    "rate": 1.0,
+    "duracion": 1.367
+   }
+  ],
+  "Anim_SwordV2_Slash_IP_Montage": [
+   {
+    "pos": 0.45,
+    "min": 0.45,
+    "max": 0.45,
+    "parry": true,
+    "dano": 40.0,
+    "danos": [
+     40.0
+    ],
+    "n": 4,
+    "rate": 1.0,
+    "duracion": 2.16
+   }
+  ],
+  "Boss_Attack_Uppercut_InP_Montage": [
+   {
+    "pos": 0.895,
+    "min": 0.895,
+    "max": 0.895,
+    "parry": true,
+    "dano": 40.0,
+    "danos": [
+     40.0
+    ],
+    "n": 5,
+    "rate": 1.0,
+    "duracion": 4.052
+   }
+  ]
+ },
+ "BP_Ghoul_C": {
+  "AS_NAAT_Zombie_Attack_BH_Stand_Montage": [
+   {
+    "pos": 0.83,
+    "min": 0.83,
+    "max": 0.83,
+    "parry": true,
+    "dano": 30.0,
+    "danos": [
+     30.0
+    ],
+    "n": 11,
+    "rate": 1.21,
+    "duracion": 1.933
+   }
+  ],
+  "AS_NAAT_Zombie_Attack_LH_Stand_Montage": [
+   {
+    "pos": 0.608,
+    "min": 0.608,
+    "max": 0.608,
+    "parry": true,
+    "dano": 30.0,
+    "danos": [
+     30.0
+    ],
+    "n": 5,
+    "rate": 1.5,
+    "duracion": 1.467
+   }
+  ],
+  "AS_NAAT_Zombie_Attack_RH_Stand_Montage": [
+   {
+    "pos": 0.635,
+    "min": 0.635,
+    "max": 0.635,
+    "parry": true,
+    "dano": 30.0,
+    "danos": [
+     30.0
+    ],
+    "n": 10,
+    "rate": 1.67,
+    "duracion": 1.5
+   }
+  ]
+ }
+}

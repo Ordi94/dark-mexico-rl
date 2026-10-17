@@ -1,0 +1,11 @@
+# Dependencias de ejecución con las versiones con las que se probó el proyecto (Python 3.12, Windows).
+# Equivale a `pip install -e .`; las de desarrollo están en el extra [dev] de pyproject.toml.
+# El entrenamiento corre en CPU (para esta red es más rápido); CUDA solo acelera el ajuste por imitación.
+torch==2.14.1
+numpy==2.5.4
+gymnasium==1.4.0
+stable_baselines3==2.9.0
+sb3_contrib==2.9.0
+tensorboard==2.21.0
+psutil==7.2.2
+lupa==2.8

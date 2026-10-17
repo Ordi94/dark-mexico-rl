@@ -1,0 +1,350 @@
+{
+ "id": "amlo",
+ "nombre": "AMLO",
+ "mapa": "LVL_AMLO",
+ "indice": 2,
+ "clases": [
+  "BP_AMLOBOSS_C"
+ ],
+ "vida_max": 2000.0,
+ "fase_avanzada": false,
+ "reacciones": [
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage"
+ ],
+ "alcance_defecto": 350.0,
+ "ignorar": [
+  "A_spear_1hand04_ThrowMid01_Montage",
+  "Paired_ForceChoke_Att_Montage"
+ ],
+ "vocabulario": [
+  "AS_Mage_Powerup_Light_01_Montage",
+  "A_spear_1hand04_ThrowMid01_Montage",
+  "Anim_CK3_ComboA_01_IP_Montage",
+  "Anim_CK3_ComboA_01_RM_Montage1",
+  "Anim_CK3_ComboA_RM_Montage",
+  "Anim_CK3_ComboA_RM_Montage1",
+  "Anim_CK3_ComboB_03_RM_Montage",
+  "Anim_CK3_ComboB_RM_Montage",
+  "Anim_CK3_ComboC_01_RM_Montage",
+  "Anim_CK3_ComboC_RM_Montage",
+  "Anim_CK3_ComboD_02_RM_Montage",
+  "Anim_CK3_ComboE_01_RM_Montage",
+  "Anim_Sword_Attack_Slash04_Root_Montage",
+  "Anim_Sword_Evade_B_Root_Montage",
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage",
+  "NinjaLeftEvade1_Montage",
+  "NinjaRightEvade1_Montage",
+  "Paired_ForceChoke_Att_Montage"
+ ],
+ "golpes": {
+  "Anim_CK3_ComboA_01_IP_Montage": [
+   {
+    "pos": 0.676,
+    "min": 0.676,
+    "max": 0.676,
+    "parry": true,
+    "dano": 32.5,
+    "n": 12,
+    "alcance": 200.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboA_01_RM_Montage1": [
+   {
+    "pos": 1.509,
+    "min": 1.509,
+    "max": 1.509,
+    "parry": true,
+    "dano": 35.0,
+    "n": 9,
+    "alcance": 320.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboA_RM_Montage": [
+   {
+    "pos": 0.667,
+    "min": 0.667,
+    "max": 0.667,
+    "parry": true,
+    "dano": 20.0,
+    "n": 17,
+    "alcance": 150.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.581,
+    "min": 1.581,
+    "max": 1.581,
+    "parry": true,
+    "dano": 20.0,
+    "n": 17,
+    "alcance": 90.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboA_RM_Montage1": [
+   {
+    "pos": 1.333,
+    "min": 1.333,
+    "max": 1.333,
+    "parry": true,
+    "dano": 35.0,
+    "n": 9,
+    "alcance": 250.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 2.282,
+    "min": 2.282,
+    "max": 2.282,
+    "parry": true,
+    "dano": 35.0,
+    "n": 10,
+    "alcance": 180.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboB_03_RM_Montage": [
+   {
+    "pos": 0.576,
+    "min": 0.576,
+    "max": 0.576,
+    "parry": true,
+    "dano": 35.0,
+    "n": 45,
+    "alcance": 80.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboB_RM_Montage": [
+   {
+    "pos": 0.783,
+    "min": 0.783,
+    "max": 0.783,
+    "parry": true,
+    "dano": 20.0,
+    "n": 17,
+    "alcance": 120.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.258,
+    "min": 1.258,
+    "max": 1.258,
+    "parry": true,
+    "dano": 20.0,
+    "n": 17,
+    "alcance": 100.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.742,
+    "min": 1.742,
+    "max": 1.742,
+    "parry": true,
+    "dano": 20.0,
+    "n": 17,
+    "alcance": 80.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboC_01_RM_Montage": [
+   {
+    "pos": 0.654,
+    "min": 0.654,
+    "max": 0.654,
+    "parry": true,
+    "dano": 35.0,
+    "n": 8,
+    "alcance": 310.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboD_02_RM_Montage": [
+   {
+    "pos": 0.355,
+    "min": 0.355,
+    "max": 0.355,
+    "parry": true,
+    "dano": 35.0,
+    "n": 17,
+    "alcance": 180.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_CK3_ComboE_01_RM_Montage": [
+   {
+    "pos": 0.608,
+    "min": 0.608,
+    "max": 0.608,
+    "parry": true,
+    "dano": 30.0,
+    "n": 14,
+    "alcance": 190.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaLeftEvade1_Montage": [
+   {
+    "pos": 1.5,
+    "min": 1.5,
+    "max": 1.5,
+    "parry": false,
+    "dano": 30.0,
+    "n": 15,
+    "alcance": 1910.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaRightEvade1_Montage": [
+   {
+    "pos": 1.5,
+    "min": 1.5,
+    "max": 1.5,
+    "parry": false,
+    "dano": 30.0,
+    "n": 9,
+    "alcance": 1370.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "A_spear_1hand04_ThrowMid01_Montage": [
+   {
+    "pos": 0.312,
+    "min": 0.312,
+    "max": 0.312,
+    "parry": false,
+    "dano": 35.0,
+    "n": 19,
+    "alcance": 6000.0,
+    "tipo": "proyectil",
+    "post_montage": true,
+    "velocidad": 4975.0
+   }
+  ],
+  "Paired_ForceChoke_Att_Montage": [
+   {
+    "pos": 4.2,
+    "min": 4.2,
+    "max": 4.2,
+    "parry": false,
+    "dano": 100.0,
+    "n": 6,
+    "alcance": 6000.0,
+    "tipo": "area",
+    "post_montage": false,
+    "velocidad": 0.0
+   }
+  ]
+ },
+ "eventos_distancia": {
+  "amlo_katanas_floor": {
+   "impactos": [
+    {
+     "retardo": 1.93,
+     "danio": 30.0
+    }
+   ],
+   "velocidad": 0.0,
+   "parry": false,
+   "tipo": "area",
+   "esquivable": true,
+   "centro": "jugador",
+   "vigencia": 0.25
+  }
+ },
+ "episodio": {
+  "via": "amlo",
+  "start_phase": 1,
+  "vida_fase1": 1600.0,
+  "vida_fase2": 1500.0,
+  "clases_victoria": [
+   "BP_Chamuco_C"
+  ],
+  "segundos_maximos": 600.0,
+  "mod": {
+   "id": "amlo",
+   "map": "LVL_AMLO",
+   "classes": [
+    "BP_AMLOBOSS_C",
+    "BP_Chamuco_C"
+   ],
+   "purge": [
+    "BP_AMLOBOSS_C",
+    "BP_Chamuco_C",
+    "BP_CHUPACABRAS_C"
+   ],
+   "start": {
+    "kind": "spawn_class",
+    "class_path": "/Game/BP_AMLOBOSS.BP_AMLOBOSS_C",
+    "pos": {
+     "x": -5606.0,
+     "y": -1800.0,
+     "z": 11293.0
+    },
+    "player_offset": {
+     "x": 450.0,
+     "y": 0.0,
+     "z": -90.0
+    }
+   },
+   "hooks": [
+    {
+     "path": "/Game/BP_AMLOBOSS.BP_AMLOBOSS_C:ENTER PHASE 2",
+     "event": "phase2"
+    },
+    {
+     "path": "/Game/BP_Chamuco.BP_Chamuco_C:death",
+     "event": "victory"
+    },
+    {
+     "path": "/Game/BP_AMLOBOSS.BP_AMLOBOSS_C:Ataque Throw Kat",
+     "event": "remote",
+     "id": "amlo_throw_kat"
+    },
+    {
+     "path": "/Game/BP_AMLOBOSS.BP_AMLOBOSS_C:ATAQUE DISTANCE KATANAS FLOOR",
+     "event": "remote",
+     "id": "amlo_katanas_floor"
+    },
+    {
+     "path": "/Game/BP_AMLOBOSS.BP_AMLOBOSS_C:AOE",
+     "event": "remote",
+     "id": "amlo_aoe"
+    }
+   ],
+   "minors": [
+    "BP_ChairosOP_C",
+    "BP_Ghoul_C",
+    "BP_Chairos_C"
+   ],
+   "phase2": {
+    "class": "BP_Chamuco_C",
+    "timeout": 60.0
+   }
+  }
+ },
+ "bot": {
+  "especial_seguro": 2.7,
+  "pausa_bajo_vida": 0.2,
+  "pausa_maxima": 25.0
+ }
+}

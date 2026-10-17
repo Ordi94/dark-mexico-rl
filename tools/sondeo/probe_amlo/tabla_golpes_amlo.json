@@ -1,0 +1,298 @@
+{
+ "A_spear_1hand04_ThrowMid01_Montage": [
+  {
+   "pos": 0.433,
+   "min": 0.367,
+   "max": 0.433,
+   "parry": false,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 6,
+   "rate": 2.0,
+   "duracion": 0.8
+  }
+ ],
+ "Anim_CK3_ComboA_01_IP_Montage": [
+  {
+   "pos": 0.676,
+   "min": 0.676,
+   "max": 0.676,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    30.0,
+    35.0
+   ],
+   "n": 10,
+   "rate": 1.0,
+   "duracion": 1.367
+  }
+ ],
+ "Anim_CK3_ComboA_01_RM_Montage1": [
+  {
+   "pos": 1.509,
+   "min": 1.509,
+   "max": 1.509,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 12,
+   "rate": 1.0,
+   "duracion": 2.207
+  }
+ ],
+ "Anim_CK3_ComboA_RM_Montage": [
+  {
+   "pos": 0.667,
+   "min": 0.667,
+   "max": 0.667,
+   "parry": true,
+   "dano": 20.0,
+   "danos": [
+    20.0
+   ],
+   "n": 11,
+   "rate": 1.0,
+   "duracion": 2.167
+  },
+  {
+   "pos": 1.581,
+   "min": 1.581,
+   "max": 1.581,
+   "parry": true,
+   "dano": 20.0,
+   "danos": [
+    20.0
+   ],
+   "n": 9,
+   "rate": 1.0,
+   "duracion": 2.167
+  }
+ ],
+ "Anim_CK3_ComboA_RM_Montage1": [
+  {
+   "pos": 1.333,
+   "min": 1.333,
+   "max": 1.333,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 12,
+   "rate": 1.0,
+   "duracion": 2.862
+  },
+  {
+   "pos": 2.282,
+   "min": 2.282,
+   "max": 2.282,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 11,
+   "rate": 1.0,
+   "duracion": 2.862
+  }
+ ],
+ "Anim_CK3_ComboB_03_RM_Montage": [
+  {
+   "pos": 0.576,
+   "min": 0.576,
+   "max": 0.576,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    30.0,
+    35.0
+   ],
+   "n": 23,
+   "rate": 1.0,
+   "duracion": 1.238
+  }
+ ],
+ "Anim_CK3_ComboB_RM_Montage": [
+  {
+   "pos": 0.783,
+   "min": 0.783,
+   "max": 0.783,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    20.0,
+    30.0
+   ],
+   "n": 22,
+   "rate": 1.0,
+   "duracion": 2.2
+  },
+  {
+   "pos": 1.258,
+   "min": 1.258,
+   "max": 1.258,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    20.0,
+    30.0
+   ],
+   "n": 19,
+   "rate": 1.0,
+   "duracion": 2.2
+  },
+  {
+   "pos": 1.742,
+   "min": 1.742,
+   "max": 1.742,
+   "parry": true,
+   "dano": 30.0,
+   "danos": [
+    20.0,
+    30.0
+   ],
+   "n": 17,
+   "rate": 1.0,
+   "duracion": 2.2
+  }
+ ],
+ "Anim_CK3_ComboC_01_RM_Montage": [
+  {
+   "pos": 0.654,
+   "min": 0.654,
+   "max": 0.654,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    30.0,
+    35.0
+   ],
+   "n": 6,
+   "rate": 1.0,
+   "duracion": 1.3
+  }
+ ],
+ "Anim_CK3_ComboD_02_RM_Montage": [
+  {
+   "pos": 0.355,
+   "min": 0.355,
+   "max": 0.355,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    30.0,
+    35.0
+   ],
+   "n": 15,
+   "rate": 1.0,
+   "duracion": 1.517
+  }
+ ],
+ "Anim_CK3_ComboE_01_RM_Montage": [
+  {
+   "pos": 0.608,
+   "min": 0.608,
+   "max": 0.608,
+   "parry": true,
+   "dano": 35.0,
+   "danos": [
+    30.0,
+    35.0
+   ],
+   "n": 14,
+   "rate": 1.0,
+   "duracion": 1.5
+  }
+ ],
+ "NinjaLeftEvade1_Montage": [
+  {
+   "pos": 1.433,
+   "min": 1.433,
+   "max": 1.433,
+   "parry": false,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 2.8
+  },
+  {
+   "pos": 1.5,
+   "min": 1.5,
+   "max": 1.5,
+   "parry": false,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 11,
+   "rate": 1.0,
+   "duracion": 2.8
+  }
+ ],
+ "NinjaRightEvade1_Montage": [
+  {
+   "pos": 1.417,
+   "min": 1.417,
+   "max": 1.417,
+   "parry": false,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 2.8
+  },
+  {
+   "pos": 1.483,
+   "min": 1.483,
+   "max": 1.483,
+   "parry": false,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 8,
+   "rate": 1.0,
+   "duracion": 2.8
+  }
+ ],
+ "evento:Ataque Throw Kat": [
+  {
+   "pos": 0.9,
+   "min": 0.883,
+   "max": 0.933,
+   "parry": false,
+   "dano": 35.0,
+   "danos": [
+    35.0
+   ],
+   "n": 6,
+   "post_montage": true,
+   "nota": "katana lanzada (proyectil); segundos de juego desde el evento Ataque Throw Kat (montage A_spear_1hand04_ThrowMid01_Montage a rate 2.0, 0.4 s). Alcance medido hasta 3900 uu; a corta distancia el golpe llega dentro del montage (entrada A_spear)."
+  }
+ ],
+ "evento:ATAQUE DISTANCE KATANAS FLOOR": [
+  {
+   "pos": 1.95,
+   "min": 1.95,
+   "max": 1.95,
+   "parry": false,
+   "dano": 30.0,
+   "danos": [
+    30.0
+   ],
+   "n": 3,
+   "post_montage": true,
+   "nota": "katanas en el piso / AOE: causante nulo (actor de area ya destruido); segundos desde el evento; coincide con el evento AOE del jefe"
+  }
+ ]
+}

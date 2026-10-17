@@ -1,0 +1,183 @@
+{
+ "id": "nahual",
+ "nombre": "Chupacabras (Nahual)",
+ "mapa": "LVL_AMLO",
+ "indice": 4,
+ "clases": [
+  "BP_CHUPACABRAS_C"
+ ],
+ "vida_max": 2000.0,
+ "fase_avanzada": false,
+ "reacciones": [
+  "NinjaHeadHit_02_Montage"
+ ],
+ "alcance_defecto": 350.0,
+ "vocabulario": [
+  "AS_Mage_Ability_Spell_HighRtLight_02_Montage",
+  "AS_Mage_Elemental_Fire_Volley_01_Montage",
+  "Anim_Sword_Evade_B_Root_Montage",
+  "Anim_Whisper_Attack1_Montage",
+  "Anim_Whisper_Attack2_Montage",
+  "Anim_Whisper_Attack3_Montage",
+  "NinjaHeadHit_02_Montage"
+ ],
+ "golpes": {
+  "AS_Mage_Elemental_Fire_Volley_01_Montage": [
+   {
+    "pos": 1.783,
+    "min": 1.783,
+    "max": 1.783,
+    "parry": false,
+    "dano": 40.0,
+    "n": 22,
+    "alcance": 6000.0,
+    "tipo": "proyectil",
+    "velocidad": 3050.0
+   },
+   {
+    "pos": 2.599,
+    "min": 2.599,
+    "max": 2.599,
+    "parry": false,
+    "dano": 40.0,
+    "n": 22,
+    "alcance": 6000.0,
+    "tipo": "proyectil",
+    "velocidad": 3050.0
+   },
+   {
+    "pos": 3.568,
+    "min": 3.568,
+    "max": 3.568,
+    "parry": false,
+    "dano": 40.0,
+    "n": 22,
+    "alcance": 6000.0,
+    "tipo": "proyectil",
+    "velocidad": 3050.0
+   }
+  ],
+  "Anim_Whisper_Attack1_Montage": [
+   {
+    "pos": 0.689,
+    "min": 0.689,
+    "max": 0.689,
+    "parry": true,
+    "dano": 40.0,
+    "n": 39,
+    "alcance": 150.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Whisper_Attack2_Montage": [
+   {
+    "pos": 0.699,
+    "min": 0.699,
+    "max": 0.699,
+    "parry": true,
+    "dano": 40.0,
+    "n": 39,
+    "alcance": 150.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "Anim_Whisper_Attack3_Montage": [
+   {
+    "pos": 0.757,
+    "min": 0.757,
+    "max": 0.757,
+    "parry": true,
+    "dano": 40.0,
+    "n": 43,
+    "alcance": 100.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.282,
+    "min": 1.282,
+    "max": 1.282,
+    "parry": true,
+    "dano": 40.0,
+    "n": 42,
+    "alcance": 100.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "AS_Mage_Ability_Spell_HighRtLight_02_Montage": [
+   {
+    "pos": 1.216,
+    "min": 1.216,
+    "max": 1.216,
+    "parry": false,
+    "dano": 40.0,
+    "n": 47,
+    "alcance": 6000.0,
+    "tipo": "rayo",
+    "velocidad": 0.0,
+    "post_montage": true
+   }
+  ]
+ },
+ "eventos_distancia": {},
+ "episodio": {
+  "via": "nahual",
+  "start_phase": 1,
+  "vida_fase1": 2000.0,
+  "vida_fase2": 0.0,
+  "clases_victoria": [
+   "BP_CHUPACABRAS_C"
+  ],
+  "mod": {
+   "id": "nahual",
+   "map": "LVL_AMLO",
+   "classes": [
+    "BP_CHUPACABRAS_C"
+   ],
+   "purge": [
+    "BP_AMLOBOSS_C",
+    "BP_Chamuco_C",
+    "BP_CHUPACABRAS_C"
+   ],
+   "start": {
+    "kind": "level_event",
+    "level_class": "LVL_AMLO_C",
+    "event": "SPAWN  NAHUAL",
+    "boss_class": "BP_CHUPACABRAS_C",
+    "wait_seconds": 1.0,
+    "player_offset": {
+     "x": 450.0,
+     "y": 0.0,
+     "z": -91.0
+    }
+   },
+   "hooks": [
+    {
+     "path": "/Game/BP_CHUPACABRAS.BP_CHUPACABRAS_C:death",
+     "event": "victory"
+    },
+    {
+     "path": "/Game/BP_CHUPACABRAS.BP_CHUPACABRAS_C:ATTACK RAYO",
+     "event": "remote",
+     "id": "nahual_rayo"
+    },
+    {
+     "path": "/Game/BP_CHUPACABRAS.BP_CHUPACABRAS_C:ATTACK FIREBALL",
+     "event": "remote",
+     "id": "nahual_fireball"
+    }
+   ],
+   "minors": [
+    "BP_ChairosOP_C",
+    "BP_Ghoul_C",
+    "BP_Chairos_C"
+   ]
+  }
+ },
+ "bot": {
+  "especial_seguro": 2.7
+ }
+}

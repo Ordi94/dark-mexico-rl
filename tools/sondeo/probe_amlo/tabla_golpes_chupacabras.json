@@ -1,0 +1,118 @@
+{
+ "AS_Mage_Elemental_Fire_Volley_01_Montage": [
+  {
+   "pos": 1.817,
+   "min": 1.817,
+   "max": 1.817,
+   "parry": false,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 7.573
+  },
+  {
+   "pos": 2.633,
+   "min": 2.633,
+   "max": 2.633,
+   "parry": false,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 7.573
+  },
+  {
+   "pos": 3.617,
+   "min": 3.617,
+   "max": 3.617,
+   "parry": false,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 1,
+   "rate": 1.0,
+   "duracion": 7.573
+  }
+ ],
+ "Anim_Whisper_Attack1_Montage": [
+  {
+   "pos": 0.689,
+   "min": 0.689,
+   "max": 0.689,
+   "parry": true,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 27,
+   "rate": 1.0,
+   "duracion": 1.833
+  }
+ ],
+ "Anim_Whisper_Attack2_Montage": [
+  {
+   "pos": 0.699,
+   "min": 0.699,
+   "max": 0.699,
+   "parry": true,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 11,
+   "rate": 1.0,
+   "duracion": 1.733
+  }
+ ],
+ "Anim_Whisper_Attack3_Montage": [
+  {
+   "pos": 0.757,
+   "min": 0.757,
+   "max": 0.757,
+   "parry": true,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 20,
+   "rate": 1.0,
+   "duracion": 2.1
+  },
+  {
+   "pos": 1.282,
+   "min": 1.282,
+   "max": 1.282,
+   "parry": true,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 20,
+   "rate": 1.0,
+   "duracion": 2.1
+  }
+ ],
+ "AS_Mage_Ability_Spell_HighRtLight_02_Montage": [
+  {
+   "pos": 1.216,
+   "min": 1.216,
+   "max": 1.216,
+   "parry": false,
+   "dano": 40.0,
+   "danos": [
+    40.0
+   ],
+   "n": 47,
+   "post_montage": true,
+   "rate": 1.0,
+   "duracion": 1.18,
+   "nota": "ATTACK RAYO: el rayo cae 1.216 s despues de iniciar el montage, cuando este ya termino (dura ~1.18 s); 47 de 47 con el jugador quieto"
+  }
+ ]
+}

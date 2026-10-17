@@ -1,0 +1,194 @@
+{
+ "id": "juice_fase2",
+ "nombre": "Juice (fase 2)",
+ "mapa": "LVL_Boss",
+ "indice": 1,
+ "clases": [
+  "BP_Enemy_JuicePhase2_C"
+ ],
+ "vida_max": 1000.0,
+ "fase_avanzada": true,
+ "reacciones": [
+  "Boss_Parried_RM_Montage",
+  "Boss_Staggered_RM_Montage"
+ ],
+ "alcance_defecto": 350.0,
+ "vocabulario": [
+  "NinjaSpinningBackfist_Montage",
+  "NinjaBackEvade_Montage",
+  "NinjaWheelKick_Montage1",
+  "NinjaStraightKick_Montage",
+  "NinjaObliqueKick_Montage",
+  "NinjaLowRightThaiKick_Montage",
+  "NinjaRightCross_Montage",
+  "NinjaFrontEvade_Montage",
+  "NinjaWheelKick_Montage",
+  "NinjaLeftHook_Individual",
+  "NinjaLeftHook_Montage",
+  "NinjaRightUppercut_Montage1"
+ ],
+ "golpes": {
+  "NinjaLeftHook_Individual": [
+   {
+    "pos": 0.483,
+    "min": 0.483,
+    "max": 0.483,
+    "parry": true,
+    "dano": 20.0,
+    "n": 53,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaLeftHook_Montage": [
+   {
+    "pos": 0.483,
+    "min": 0.483,
+    "max": 0.483,
+    "parry": true,
+    "dano": 15.0,
+    "n": 7,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.35,
+    "min": 1.35,
+    "max": 1.35,
+    "parry": true,
+    "dano": 15.0,
+    "n": 8,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   },
+   {
+    "pos": 1.95,
+    "min": 1.95,
+    "max": 1.95,
+    "parry": true,
+    "dano": 15.0,
+    "n": 8,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaLowRightThaiKick_Montage": [
+   {
+    "pos": 0.917,
+    "min": 0.917,
+    "max": 0.917,
+    "parry": true,
+    "dano": 20.0,
+    "n": 32,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaObliqueKick_Montage": [
+   {
+    "pos": 0.683,
+    "min": 0.683,
+    "max": 0.683,
+    "parry": true,
+    "dano": 20.0,
+    "n": 45,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaRightCross_Montage": [
+   {
+    "pos": 0.65,
+    "min": 0.65,
+    "max": 0.65,
+    "parry": true,
+    "dano": 20.0,
+    "n": 29,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaRightUppercut_Montage1": [
+   {
+    "pos": 0.483,
+    "min": 0.483,
+    "max": 0.483,
+    "parry": true,
+    "dano": 20.0,
+    "n": 27,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaSpinningBackfist_Montage": [
+   {
+    "pos": 1.367,
+    "min": 1.367,
+    "max": 1.367,
+    "parry": true,
+    "dano": 20.0,
+    "n": 136,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaStraightKick_Montage": [
+   {
+    "pos": 0.483,
+    "min": 0.483,
+    "max": 0.483,
+    "parry": true,
+    "dano": 20.0,
+    "n": 31,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaWheelKick_Montage": [
+   {
+    "pos": 0.55,
+    "min": 0.55,
+    "max": 0.55,
+    "parry": true,
+    "dano": 20.0,
+    "n": 36,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ],
+  "NinjaWheelKick_Montage1": [
+   {
+    "pos": 0.883,
+    "min": 0.883,
+    "max": 0.883,
+    "parry": true,
+    "dano": 30.0,
+    "n": 59,
+    "alcance": 350.0,
+    "tipo": "melee",
+    "velocidad": 0.0
+   }
+  ]
+ },
+ "eventos_distancia": {},
+ "episodio": {
+  "via": "juice",
+  "start_phase": 2,
+  "vida_fase1": 0.0,
+  "vida_fase2": 1000.0,
+  "clases_victoria": [
+   "BP_Enemy_JuicePhase2_C"
+  ]
+ }
+}

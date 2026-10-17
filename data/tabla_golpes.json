@@ -1,0 +1,364 @@
+{
+ "Anim_SwordV2_Combo03_01_RM_Montage1": [
+  {
+   "pos": 2.217,
+   "min": 2.117,
+   "max": 2.217,
+   "parry": false,
+   "dano": 40.0,
+   "n": 19
+  },
+  {
+   "pos": 3.217,
+   "min": 3.217,
+   "max": 3.217,
+   "parry": false,
+   "dano": 40.0,
+   "n": 21
+  },
+  {
+   "pos": 4.217,
+   "min": 4.217,
+   "max": 4.217,
+   "parry": false,
+   "dano": 40.0,
+   "n": 20
+  },
+  {
+   "pos": 5.217,
+   "min": 5.217,
+   "max": 5.217,
+   "parry": false,
+   "dano": 40.0,
+   "n": 16
+  },
+  {
+   "pos": 6.217,
+   "min": 6.133,
+   "max": 6.217,
+   "parry": false,
+   "dano": 40.0,
+   "n": 11
+  },
+  {
+   "pos": 7.183,
+   "min": 6.983,
+   "max": 7.183,
+   "parry": false,
+   "dano": 40.0,
+   "n": 10
+  },
+  {
+   "pos": 8.083,
+   "min": 8.083,
+   "max": 8.183,
+   "parry": false,
+   "dano": 40.0,
+   "n": 3
+  }
+ ],
+ "Anim_SwordV2_Combo03_01_RM_Montage2": [
+  {
+   "pos": 0.683,
+   "min": 0.683,
+   "max": 0.683,
+   "parry": false,
+   "dano": 35.0,
+   "n": 329
+  }
+ ],
+ "Anim_Sword_Air_Attack1_InPlace_Montage": [
+  {
+   "pos": 0.55,
+   "min": 0.55,
+   "max": 0.55,
+   "parry": false,
+   "dano": 35.0,
+   "n": 64
+  }
+ ],
+ "Anim_Sword_Air_Attack2_InPlace_Montage": [
+  {
+   "pos": 0.65,
+   "min": 0.55,
+   "max": 0.717,
+   "parry": false,
+   "dano": 35.0,
+   "n": 12
+  },
+  {
+   "pos": 1.083,
+   "min": 1.017,
+   "max": 1.117,
+   "parry": false,
+   "dano": 35.0,
+   "n": 3
+  }
+ ],
+ "Anim_Sword_Air_ComboAttack_InPlace_Montage": [
+  {
+   "pos": 0.683,
+   "min": 0.65,
+   "max": 0.75,
+   "parry": false,
+   "dano": 35.0,
+   "n": 12
+  },
+  {
+   "pos": 1.05,
+   "min": 0.917,
+   "max": 1.117,
+   "parry": false,
+   "dano": 35.0,
+   "n": 5
+  },
+  {
+   "pos": 1.717,
+   "min": 1.683,
+   "max": 1.917,
+   "parry": false,
+   "dano": 35.0,
+   "n": 16
+  },
+  {
+   "pos": 2.183,
+   "min": 2.083,
+   "max": 2.283,
+   "parry": false,
+   "dano": 35.0,
+   "n": 5
+  }
+ ],
+ "Anim_Sword_Attack_Stab01_Root_Cargada": [
+  {
+   "pos": 1.55,
+   "min": 1.55,
+   "max": 1.55,
+   "parry": true,
+   "dano": 35.0,
+   "n": 20
+  }
+ ],
+ "Boss_Attack_ChargedCombo_InP_Montage": [
+  {
+   "pos": 0.717,
+   "min": 0.717,
+   "max": 0.717,
+   "parry": true,
+   "dano": 25.0,
+   "n": 131
+  },
+  {
+   "pos": 1.217,
+   "min": 1.217,
+   "max": 1.217,
+   "parry": true,
+   "dano": 25.0,
+   "n": 116
+  },
+  {
+   "pos": 1.85,
+   "min": 1.85,
+   "max": 1.85,
+   "parry": true,
+   "dano": 25.0,
+   "n": 110
+  },
+  {
+   "pos": 2.85,
+   "min": 2.85,
+   "max": 2.85,
+   "parry": false,
+   "dano": 40.0,
+   "n": 72
+  }
+ ],
+ "Boss_Attack_ChargedCombo_InP_Montage1": [
+  {
+   "pos": 0.717,
+   "min": 0.717,
+   "max": 0.717,
+   "parry": true,
+   "dano": 25.0,
+   "n": 34
+  },
+  {
+   "pos": 1.183,
+   "min": 1.183,
+   "max": 1.183,
+   "parry": true,
+   "dano": 25.0,
+   "n": 29
+  },
+  {
+   "pos": 1.917,
+   "min": 1.917,
+   "max": 1.917,
+   "parry": true,
+   "dano": 25.0,
+   "n": 29
+  },
+  {
+   "pos": 3.483,
+   "min": 3.483,
+   "max": 3.483,
+   "parry": false,
+   "dano": 40.0,
+   "n": 18
+  }
+ ],
+ "Boss_Attack_Running_Simple_InP_Montage": [
+  {
+   "pos": 1.783,
+   "min": 1.783,
+   "max": 1.783,
+   "parry": false,
+   "dano": 35.0,
+   "n": 18
+  }
+ ],
+ "Boss_Attack_SwingAndSlam_InP_Montage": [
+  {
+   "pos": 1.833,
+   "min": 1.833,
+   "max": 1.833,
+   "parry": true,
+   "dano": 25.0,
+   "n": 46
+  },
+  {
+   "pos": 4.167,
+   "min": 4.167,
+   "max": 4.167,
+   "parry": false,
+   "dano": 30.0,
+   "n": 43
+  }
+ ],
+ "Boss_Attack_Uppercut_InP_Montage": [
+  {
+   "pos": 0.883,
+   "min": 0.883,
+   "max": 0.883,
+   "parry": true,
+   "dano": 10.0,
+   "n": 84
+  }
+ ],
+ "NinjaLeftHook_Individual": [
+  {
+   "pos": 0.483,
+   "min": 0.483,
+   "max": 0.483,
+   "parry": true,
+   "dano": 20.0,
+   "n": 53
+  }
+ ],
+ "NinjaLeftHook_Montage": [
+  {
+   "pos": 0.483,
+   "min": 0.483,
+   "max": 0.483,
+   "parry": true,
+   "dano": 15.0,
+   "n": 7
+  },
+  {
+   "pos": 1.35,
+   "min": 1.35,
+   "max": 1.35,
+   "parry": true,
+   "dano": 15.0,
+   "n": 8
+  },
+  {
+   "pos": 1.95,
+   "min": 1.95,
+   "max": 1.95,
+   "parry": true,
+   "dano": 15.0,
+   "n": 8
+  }
+ ],
+ "NinjaLowRightThaiKick_Montage": [
+  {
+   "pos": 0.917,
+   "min": 0.917,
+   "max": 0.917,
+   "parry": true,
+   "dano": 20.0,
+   "n": 32
+  }
+ ],
+ "NinjaObliqueKick_Montage": [
+  {
+   "pos": 0.683,
+   "min": 0.683,
+   "max": 0.683,
+   "parry": true,
+   "dano": 20.0,
+   "n": 45
+  }
+ ],
+ "NinjaRightCross_Montage": [
+  {
+   "pos": 0.65,
+   "min": 0.65,
+   "max": 0.65,
+   "parry": true,
+   "dano": 20.0,
+   "n": 29
+  }
+ ],
+ "NinjaRightUppercut_Montage1": [
+  {
+   "pos": 0.483,
+   "min": 0.483,
+   "max": 0.483,
+   "parry": true,
+   "dano": 20.0,
+   "n": 27
+  }
+ ],
+ "NinjaSpinningBackfist_Montage": [
+  {
+   "pos": 1.367,
+   "min": 1.367,
+   "max": 1.367,
+   "parry": true,
+   "dano": 20.0,
+   "n": 136
+  }
+ ],
+ "NinjaStraightKick_Montage": [
+  {
+   "pos": 0.483,
+   "min": 0.483,
+   "max": 0.483,
+   "parry": true,
+   "dano": 20.0,
+   "n": 31
+  }
+ ],
+ "NinjaWheelKick_Montage": [
+  {
+   "pos": 0.55,
+   "min": 0.55,
+   "max": 0.55,
+   "parry": true,
+   "dano": 20.0,
+   "n": 36
+  }
+ ],
+ "NinjaWheelKick_Montage1": [
+  {
+   "pos": 0.883,
+   "min": 0.883,
+   "max": 0.883,
+   "parry": true,
+   "dano": 30.0,
+   "n": 59
+  }
+ ]
+}
