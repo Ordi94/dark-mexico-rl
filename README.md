@@ -10,13 +10,13 @@ Este proyecto es educativo, no oficial y no tiene relación con NorDreams. Neces
 
 ## Demo
 
-![Panel de neuronas en vivo durante una pelea contra Juice](docs/img/panel.gif)
+![Panel de neuronas en vivo durante una pelea contra Sheinbaum](docs/img/panel.gif)
 
-Catorce segundos del panel completo en una pelea real contra Juice (segunda fase): las neuronas de las dos capas de la política, la probabilidad de cada acción, las entradas que más pesaron en la decisión y la confianza V(s) de los últimos 20 s, con una marca verde en cada parry. Se explica en [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
+Catorce segundos del panel completo en una pelea real contra Sheinbaum, en su segunda fase (el panel muestra "Juice", el nombre interno del jefe): las neuronas de las dos capas de la política, la probabilidad de cada acción, las entradas que más pesaron en la decisión y la confianza V(s) de los últimos 20 s, con una marca verde en cada parry. Se explica en [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
 
-![La IA peleando contra Juice con el panel de neuronas](docs/img/pelea.gif)
+![La IA peleando contra Sheinbaum con el panel de neuronas](docs/img/pelea.gif)
 
-Quince segundos de una pelea real contra Juice (segunda fase): a la izquierda el juego, a la derecha el panel. Se ve cómo la red espera casi siempre y, cuando llega el golpe, la barra de Parry sube al 100% y la IA hace el parry.
+Quince segundos de una pelea real contra Sheinbaum, en su segunda fase: a la izquierda el juego, a la derecha el panel. Se ve cómo la red espera casi siempre y, cuando llega el golpe, la barra de Parry sube al 100% y la IA hace el parry.
 
 ## Resultados
 
@@ -24,13 +24,15 @@ Cien peleas por jefe, jefe al 100% de vida, primera fase de cada jefe, política
 
 | Jefe | Bot de reglas (50 peleas) | Imitación (80 peleas) | PPO (100 peleas) |
 |---|---|---|---|
-| Juice | 66% | 76% | 92% |
+| Sheinbaum (`juice`) | 66% | 76% | 92% |
 | AMLO + Chamuco (seguidos) | 100% | 100% | 92% |
 | Chamuco | 100% | 100% | 99% |
 | Chupacabras | 98% | 100% | 100% |
 | Media | 91.0% | 94.0% | 95.75% |
 
-Con 100 peleas una tasa tiene unos 5 puntos de incertidumbre, así que la mejora de la media sobre la imitación está dentro del ruido. Lo que sí cambió es Juice: la imitación nunca pasó de 76-79% y el PPO llegó a 92%. AMLO bajó de 100% a 92%, y lo cuento en [docs/05-lo-que-aprendimos.md](docs/05-lo-que-aprendimos.md), junto con lo que no funcionó: PPO desde cero terminó con 0% de victorias, y tres rondas de DAgger no mejoraron nada.
+En el código y en los comandos Sheinbaum se llama `juice`, por el nombre de su Blueprint en el juego.
+
+Con 100 peleas una tasa tiene unos 5 puntos de incertidumbre, así que la mejora de la media sobre la imitación está dentro del ruido. Lo que sí cambió es Sheinbaum: la imitación nunca pasó de 76-79% y el PPO llegó a 92%. AMLO bajó de 100% a 92%, y lo cuento en [docs/05-lo-que-aprendimos.md](docs/05-lo-que-aprendimos.md), junto con lo que no funcionó: PPO desde cero terminó con 0% de victorias, y tres rondas de DAgger no mejoraron nada.
 
 Los modelos entrenados no están en el repositorio. Se descargan de la sección Releases (instrucciones en [docs/02-ver-pelear.md](docs/02-ver-pelear.md)).
 

@@ -12,13 +12,13 @@ The documentation is in Spanish. This page is a short summary.
 
 ## Demo
 
-![The AI fighting Juice with the neuron panel](docs/img/pelea.gif)
+![The AI fighting Sheinbaum with the neuron panel](docs/img/pelea.gif)
 
-Fifteen seconds of a real fight against Juice (second phase): the game on the left, the live panel on the right. The network mostly waits, and when the hit comes the Parry bar jumps to 100% and the AI parries.
+Fifteen seconds of a real fight against Sheinbaum, in her second phase: the game on the left, the live panel on the right. The network mostly waits, and when the hit comes the Parry bar jumps to 100% and the AI parries.
 
-![The live neuron panel during a fight against Juice](docs/img/panel.gif)
+![The live neuron panel during a fight against Sheinbaum](docs/img/panel.gif)
 
-Fourteen seconds of the full panel in a real fight against Juice (second phase): the neurons of both policy layers, the probability of each action, the inputs that weighed most in the decision and the value estimate V(s) of the last 20 s, with a green mark at every parry. It is explained in [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
+Fourteen seconds of the full panel in a real fight against Sheinbaum, in her second phase (the panel reads "Juice", the boss internal name): the neurons of both policy layers, the probability of each action, the inputs that weighed most in the decision and the value estimate V(s) of the last 20 s, with a green mark at every parry. It is explained in [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
 
 ## Results
 
@@ -26,13 +26,15 @@ Fourteen seconds of the full panel in a real fight against Juice (second phase):
 
 | Boss | Rule-based bot (50 fights) | Imitation (80 fights) | PPO (100 fights) |
 |---|---|---|---|
-| Juice | 66% | 76% | 92% |
+| Sheinbaum (`juice`) | 66% | 76% | 92% |
 | AMLO + Chamuco (back to back) | 100% | 100% | 92% |
 | Chamuco | 100% | 100% | 99% |
 | Chupacabras | 98% | 100% | 100% |
 | Mean | 91.0% | 94.0% | 95.75% |
 
-With 100 fights a rate carries about 5 points of uncertainty, so the gain in the mean is within noise. The real change is Juice: imitation never went past 76-79% and PPO reached 92%. PPO from scratch ended at 0% wins, and three rounds of DAgger did not help. The full story is in [docs/05-lo-que-aprendimos.md](docs/05-lo-que-aprendimos.md).
+In the code and in the commands Sheinbaum is called `juice`, after her Blueprint name in the game.
+
+With 100 fights a rate carries about 5 points of uncertainty, so the gain in the mean is within noise. The real change is Sheinbaum: imitation never went past 76-79% and PPO reached 92%. PPO from scratch ended at 0% wins, and three rounds of DAgger did not help. The full story is in [docs/05-lo-que-aprendimos.md](docs/05-lo-que-aprendimos.md).
 
 The trained models are not in the repository. They are published in the Releases section.
 

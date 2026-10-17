@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Juega N peleas completas contra un jefe (Juice, AMLO, Chamuco o Chupacabras) con el bot de reglas.
+  Juega N peleas completas contra un jefe (Sheinbaum, AMLO, Chamuco o Chupacabras) con el bot de reglas.
 
 .DESCRIPTION
   Entorno multi-jefe (observacion v2): cada instancia del juego queda fija al mapa del jefe y reinicia

@@ -8,7 +8,7 @@
   TensorBoard queda en http://localhost:6006 (si el puerto esta ocupado usa el siguiente libre).
   Ctrl+C o detener.ps1 guardan el modelo y cierran juegos y Python de forma ordenada.
 
-  Con -Multijefe entrena un MaskablePPO unico contra Juice, AMLO, el Chamuco y el Chupacabras
+  Con -Multijefe entrena un MaskablePPO unico contra Sheinbaum, AMLO, el Chamuco y el Chupacabras
   (observacion v2) partiendo de runs\multijefe_imitacion\mejor.zip. El nombre por defecto pasa a
   multijefe_ppo y la corrida se reanuda sola desde runs\<Nombre>\checkpoints\ultimo.zip. Cada
   -MinutosEvaluacion minutos evalua el modelo en juego (20 peleas por jefe) y solo reemplaza a

@@ -54,7 +54,9 @@ Abre `http://127.0.0.1:8765/` en tu navegador antes de lanzar el juego. La pági
 
 El panel solo lee. No cambia la acción que elige la política. El servidor escucha en `127.0.0.1`, valida `Host` y `Origin`, y se cierra al terminar la pelea. Si el puerto está ocupado, el comando falla antes de lanzar el juego.
 
-![Panel de neuronas](img/panel.png)
+![Panel de neuronas durante una pelea contra Sheinbaum](img/panel.png)
+
+El panel y las capturas muestran "Juice" en lugar de Sheinbaum porque leen el nombre interno del jefe en el juego (`BP_Enemy_Juice`); es el mismo jefe, y por eso en los comandos se escribe `-Jefe juice`.
 
 Cómo leerlo:
 
@@ -83,6 +85,6 @@ El panel añade entre 1 y 5 ms por decisión frente a un periodo de 66 ms. En tr
 | `-Panel solo esta disponible con -Multijefe` | El panel usa la observación v2, que solo tienen los modelos multi-jefe. |
 | El puerto del panel está ocupado | Cambia con `-PanelPuerto`. |
 | La ventana se queda en negro | Espera: la carga del mapa tarda unos segundos. Si pasa de un minuto, revisa `ue4ss\UE4SS.log`. |
-| El modelo pierde mucho contra Juice | Es esperable: el 8% de las peleas contra Juice las pierde en su primera fase. Los números están en [docs/05-lo-que-aprendimos.md](05-lo-que-aprendimos.md). |
+| El modelo pierde mucho contra Sheinbaum | Es esperable: el 8% de las peleas contra Sheinbaum las pierde en su primera fase. Los números están en [docs/05-lo-que-aprendimos.md](05-lo-que-aprendimos.md). |
 
 La observación, las acciones y la máscara están descritas en [docs/03-como-funciona.md](03-como-funciona.md).

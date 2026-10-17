@@ -8,18 +8,18 @@ Todo en peleas completas contra el juego real, jefe al 100% de vida, política d
 
 | Etapa | Contra qué | Peleas | Victorias |
 |---|---|---|---|
-| PPO desde cero, 991 mil pasos (43 min) | Juice | 40 | 0%, daño medio al jefe 393 de 2 700 |
-| Bot de reglas | Juice | 50 | 72% |
-| Bot de reglas | Juice | 150 | 76% (IC 69-82%) |
-| Imitación v1 (solo Juice) | Juice | 150 | 79% (IC 71-84%) |
-| Tres rondas de DAgger sobre la v1 | Juice | 150 cada una | 78%, 69%, 67% |
-| Bot de reglas, cuatro jefes | Juice / AMLO / Chamuco / Chupacabras | 50 | 66% / 100% / 100% / 98% |
-| Imitación multi-jefe | Juice / AMLO / Chamuco / Chupacabras | 80 | 76% / 100% / 100% / 100% |
-| PPO desde la imitación, checkpoint de 5.67 M pasos | Juice / AMLO / Chamuco / Chupacabras | 100 | 92% / 92% / 99% / 100% |
+| PPO desde cero, 991 mil pasos (43 min) | Sheinbaum | 40 | 0%, daño medio al jefe 393 de 2 700 |
+| Bot de reglas | Sheinbaum | 50 | 72% |
+| Bot de reglas | Sheinbaum | 150 | 76% (IC 69-82%) |
+| Imitación v1 (solo Sheinbaum) | Sheinbaum | 150 | 79% (IC 71-84%) |
+| Tres rondas de DAgger sobre la v1 | Sheinbaum | 150 cada una | 78%, 69%, 67% |
+| Bot de reglas, cuatro jefes | Sheinbaum / AMLO / Chamuco / Chupacabras | 50 | 66% / 100% / 100% / 98% |
+| Imitación multi-jefe | Sheinbaum / AMLO / Chamuco / Chupacabras | 80 | 76% / 100% / 100% / 100% |
+| PPO desde la imitación, checkpoint de 5.67 M pasos | Sheinbaum / AMLO / Chamuco / Chupacabras | 100 | 92% / 92% / 99% / 100% |
 
-La media del PPO es 95.75% contra 94.0% de la imitación. Con 100 peleas esa diferencia no es significativa. La mejora que sí es real está en Juice: de 76% a 92%. Los intervalos de Juice (66-84% y 85-96%) casi no se tocan.
+La media del PPO es 95.75% contra 94.0% de la imitación. Con 100 peleas esa diferencia no es significativa. La mejora que sí es real está en Sheinbaum: de 76% a 92%. Los intervalos de Sheinbaum (66-84% y 85-96%) casi no se tocan.
 
-AMLO empeoró: de 100% a 92%. Perdió 7 de esas 8 peleas en su segunda fase (el Chamuco) y una por tiempo. No investigué por qué. Mi sospecha es que PPO, al arreglar Juice, movió la política en una zona que afecta al Chamuco, pero es una sospecha. Con una compuerta de promoción que solo mira la media y una tolerancia de 10 puntos por jefe, un 100% a 92% pasa.
+AMLO empeoró: de 100% a 92%. Perdió 7 de esas 8 peleas en su segunda fase (el Chamuco) y una por tiempo. No investigué por qué. Mi sospecha es que PPO, al arreglar Sheinbaum, movió la política en una zona que afecta al Chamuco, pero es una sospecha. Con una compuerta de promoción que solo mira la media y una tolerancia de 10 puntos por jefe, un 100% a 92% pasa.
 
 ## PPO desde cero: 0%
 
@@ -31,7 +31,7 @@ Lo que no aprendió fue parar golpes. El bot hace 24 parries por pelea y la red 
 
 ## Un bot de reglas ganaba, y eso cambió el plan
 
-Si el juego es determinista en sus tiempos, un programa que lea el montage del jefe y apriete LB 0.235 s antes del impacto debería parar. Lo escribí y acertó 12 de 12 parries. Con las tablas de golpes medidas (ver [docs/06](06-medir-un-jefe.md)) ganó el 72% de las peleas contra Juice. Que un bot de reglas hiciera lo que la red no podía decía qué hacer: usarlo de maestro.
+Si el juego es determinista en sus tiempos, un programa que lea el montage del jefe y apriete LB 0.235 s antes del impacto debería parar. Lo escribí y acertó 12 de 12 parries. Con las tablas de golpes medidas (ver [docs/06](06-medir-un-jefe.md)) ganó el 72% de las peleas contra Sheinbaum. Que un bot de reglas hiciera lo que la red no podía decía qué hacer: usarlo de maestro.
 
 La imitación es aprendizaje supervisado. Recolecté 600 peleas del bot, con ruido y con arranques en fase 2, y ajusté la misma red a sus decisiones. En validación (episodios que la red nunca vio) coincide con el bot el 99.5% de las veces. En juego saca 79% contra 76% del bot, con intervalos que se solapan: es una copia fiel, no una mejora.
 
@@ -45,9 +45,9 @@ Mi explicación es que la red ya coincidía con el bot en el 99.5% de los estado
 
 La imitación ya juega al nivel del bot. Si le pones PPO sin cuidado lo primero que hace es destruirla: el crítico se ajustó a los retornos del bot y no a los de la política que PPO va modificando, así que las ventajas no significan nada. Por eso hay calentamiento del crítico, penalización KL contra la política clonada y una compuerta de promoción (detalle en [docs/04](04-entrena-tu-ia.md)).
 
-La compuerta evita que un mal sorteo estropee el modelo, pero también rechaza buenos modelos por mala suerte. Ejemplo real: la primera evaluación (1.17 millones de pasos, 20 peleas por jefe) dio 13 de 20 contra Juice, una caída de 10.9 puntos con respecto a la imitación, apenas por encima de la tolerancia de 10. No se promovió. El modelo no era peor; con 20 peleas la incertidumbre es de ±10 puntos. Las siguientes evaluaciones sí se promovieron:
+La compuerta evita que un mal sorteo estropee el modelo, pero también rechaza buenos modelos por mala suerte. Ejemplo real: la primera evaluación (1.17 millones de pasos, 20 peleas por jefe) dio 13 de 20 contra Sheinbaum, una caída de 10.9 puntos con respecto a la imitación, apenas por encima de la tolerancia de 10. No se promovió. El modelo no era peor; con 20 peleas la incertidumbre es de ±10 puntos. Las siguientes evaluaciones sí se promovieron:
 
-| Pasos | Juice | AMLO | Chamuco | Chupacabras | Media (20 peleas por jefe) |
+| Pasos | Sheinbaum | AMLO | Chamuco | Chupacabras | Media (20 peleas por jefe) |
 |---|---|---|---|---|---|
 | 1 172 304 | 65% | 100% | 100% | 100% | 91.3% (no promovido) |
 | 2 696 016 | 80% | 100% | 100% | 100% | 95.0% |
@@ -78,7 +78,7 @@ Un hook de `TakeDamage` llamaba un método sobre el causante del golpe. El área
 
 ### El protocolo cambió los números
 
-El bot sacaba 88% contra Juice cuando lo medí con el entorno multi-jefe y 66% después, sin que el bot hubiera cambiado. Lo que cambió fue el protocolo: al principio el entorno sorteaba la segunda fase en el 20% de las peleas, y el bot las gana casi siempre. Ahora todas las cifras de este documento usan la primera fase de cada jefe de forma explícita. Si comparas con otros números, comprueba el protocolo.
+El bot sacaba 88% contra Sheinbaum cuando lo medí con el entorno multi-jefe y 66% después, sin que el bot hubiera cambiado. Lo que cambió fue el protocolo: al principio el entorno sorteaba la segunda fase en el 20% de las peleas, y el bot las gana casi siempre. Ahora todas las cifras de este documento usan la primera fase de cada jefe de forma explícita. Si comparas con otros números, comprueba el protocolo.
 
 ### Los núcleos de eficiencia
 

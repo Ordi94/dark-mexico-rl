@@ -144,7 +144,7 @@ El daño al jefe coincide con la caída de su vida que lee el juego (diferencia 
 
 ## Episodios, jefes y reinicios
 
-Un episodio es una pelea. Termina por victoria, por muerte del jugador (sin esperar los 10 s de la pantalla de muerte) o a los 360 s de juego. Juice vive en `LVL_Boss`. AMLO, el Chamuco (que es la segunda fase de AMLO) y el Chupacabras viven en `LVL_AMLO`. Los jefes son datos: `data/jefes/*.json` guarda por jefe las clases, la vida, el vocabulario de animaciones y la tabla de golpes.
+Un episodio es una pelea. Termina por victoria, por muerte del jugador (sin esperar los 10 s de la pantalla de muerte) o a los 360 s de juego. Sheinbaum (en el código y en los comandos se llama `juice`, por su Blueprint `BP_Enemy_Juice`) vive en `LVL_Boss`; su segunda fase, que en el juego se ve con el título "Comandante con A de Mujer", es la segunda fase de Sheinbaum y no un jefe aparte. AMLO, el Chamuco (que es la segunda fase de AMLO) y el Chupacabras viven en `LVL_AMLO`. Los jefes son datos: `data/jefes/*.json` guarda por jefe las clases, la vida, el vocabulario de animaciones y la tabla de golpes.
 
 Reiniciar con `OpenLevel` tardaba 2.6 s en `LVL_AMLO`. Por eso hay un reinicio en sitio que regenera al jugador con `Respawn_Player`, destruye lo que sobra y genera al jefe con `BeginDeferredActorSpawnFromClass`: 0.05 a 0.12 s. Cada 150 episodios hay una recarga completa del mapa para acotar la memoria (200 reinicios seguidos subieron 140 MB).
 

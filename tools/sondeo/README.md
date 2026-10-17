@@ -4,12 +4,12 @@ Mods de UE4SS y utilidades en Lua que usé para medir a los jefes: qué clases e
 
 | Carpeta | Contenido |
 |---|---|
-| `DarkMexicoProbe/` | Mod de sondeo del mapa de Juice. Se desactiva solo cuando el proceso arranca con `DMB_TRAINING=1`. |
+| `DarkMexicoProbe/` | Mod de sondeo del mapa de Sheinbaum. Se desactiva solo cuando el proceso arranca con `DMB_TRAINING=1`. |
 | `DarkMexicoProbeAmlo/` | Mod de sondeo de `LVL_AMLO`. Solo actúa con `DMP_AMLO=1`. Bloquea guardado y logros. |
-| `probe_lab/` | Utilidades de medición para el sondeo de Juice. `init.lua` las carga todas. |
+| `probe_lab/` | Utilidades de medición para el sondeo de Sheinbaum. `init.lua` las carga todas. |
 | `probe_amlo/` | Utilidades de medición de `LVL_AMLO`, lanzador y cierre por PID, y las tablas de golpes medidas. |
 
-Instalación: copia la carpeta del mod que vayas a usar dentro de `ue4ss\Mods` en la carpeta del juego, igual que `DarkMexicoBridge` ([docs/01](../../docs/01-instalacion.md)). `DarkMexicoProbeAmlo` trae un `enabled.txt` vacío y UE4SS lo carga sin editar `mods.txt`. El de Juice necesita la línea `DarkMexicoProbe : 1` en `mods.txt`.
+Instalación: copia la carpeta del mod que vayas a usar dentro de `ue4ss\Mods` en la carpeta del juego, igual que `DarkMexicoBridge` ([docs/01](../../docs/01-instalacion.md)). `DarkMexicoProbeAmlo` trae un `enabled.txt` vacío y UE4SS lo carga sin editar `mods.txt`. El de Sheinbaum necesita la línea `DarkMexicoProbe : 1` en `mods.txt`.
 
 Variables de entorno:
 
@@ -20,4 +20,4 @@ Variables de entorno:
 | `DMP_AMLO` | `1` activa `DarkMexicoProbeAmlo`. |
 | `DARKMEXICO_DIR` | Carpeta del juego, para los lanzadores. |
 
-Los sondeos no deben correr con una partida tuya abierta. `DarkMexicoProbeAmlo` bloquea el guardado y los logros; el de Juice no, así que úsalo solo en una instancia de prueba.
+Los sondeos no deben correr con una partida tuya abierta. `DarkMexicoProbeAmlo` bloquea el guardado y los logros; el de Sheinbaum no, así que úsalo solo en una instancia de prueba.

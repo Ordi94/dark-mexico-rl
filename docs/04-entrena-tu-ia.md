@@ -4,11 +4,11 @@ El camino que funcionó tiene tres etapas: un bot de reglas escrito a mano pelea
 
 Todos los comandos se ejecutan desde la raíz del repositorio, en PowerShell, con la instalación de [docs/01](01-instalacion.md) lista. Los tiempos son los míos: un i7-14700KF (20 núcleos), 128 GB de RAM y una RTX 3060, con la máquina libre. El propio entrenamiento ocupa la máquina, así que haz una copia de `Saved` antes (ver docs/01) y no juegues otra cosa mientras corre.
 
-Los scripts con la opción `-Multijefe` usan la observación v2 y los cuatro jefes. Sin esa opción siguen disponibles los de la primera versión (solo Juice, observación v1), que dejé porque sus pruebas cubren código compartido.
+Los scripts con la opción `-Multijefe` usan la observación v2 y los cuatro jefes. Sin esa opción siguen disponibles los de la primera versión (solo Sheinbaum, que en los comandos se llama `juice`; observación v1), que dejé porque sus pruebas cubren código compartido.
 
 ## 1. El bot de reglas
 
-El bot (`src/dmrl/dominio/bot_reglas.py` y `bot_jefes.py`) lee la misma observación que la red y aplica reglas con las tablas de golpes. No usa información que la red no tenga. Sus reglas contra Juice:
+El bot (`src/dmrl/dominio/bot_reglas.py` y `bot_jefes.py`) lee la misma observación que la red y aplica reglas con las tablas de golpes. No usa información que la red no tenga. Sus reglas contra Sheinbaum:
 
 - Parry cuando faltan 0.262 s o menos para un golpe que se puede parar.
 - Rodar de lado cuando faltan 0.20 s o menos para uno que no se puede parar.
@@ -22,24 +22,24 @@ Mídelo antes de gastar cómputo en nada más:
 .\scripts\evaluar.ps1 -Multijefe -Politica bot -Jefe amlo -Episodios 20
 ```
 
-Con 50 peleas por jefe el bot saca 66% contra Juice, 100% contra AMLO, 100% contra el Chamuco y 98% contra el Chupacabras. Es el techo de la imitación: una red que copia al bot no pasa de lo que el bot sabe hacer.
+Con 50 peleas por jefe el bot saca 66% contra Sheinbaum, 100% contra AMLO, 100% contra el Chamuco y 98% contra el Chupacabras. Es el techo de la imitación: una red que copia al bot no pasa de lo que el bot sabe hacer.
 
 ## 2. Recolectar demostraciones
 
 El bot juega peleas completas y cada estado se guarda con la acción que el bot habría elegido. Tres decisiones que cambian el resultado:
 
 - **Ruido DART.** La mitad de las peleas de cada jefe se juegan con una probabilidad por paso (entre 0.05 y 0.20) de ejecutar una acción válida al azar, pero la etiqueta guardada sigue siendo la del bot. Así la red ve cómo se recupera de situaciones donde el bot nunca estaría.
-- **Segunda fase.** El 20% de las peleas de Juice y de AMLO empieza en la segunda fase, para que haya datos de ella sin esperar a que el bot llegue.
+- **Segunda fase.** El 20% de las peleas de Sheinbaum y de AMLO empieza en la segunda fase, para que haya datos de ella sin esperar a que el bot llegue.
 - **Etiquetas honestas.** La marca de "golpe atendido" solo se da si la acción se ejecutó de verdad. Antes de corregirlo, con un parry inminente el bot etiquetaba "parry" en el 94% de los estados sin ruido y el 75% con ruido. Ahora son 99% y 100%.
 
-Juice y los otros tres jefes viven en mapas distintos. Lo hice en dos tandas con las cuatro instancias en el mismo mapa:
+Sheinbaum y los otros tres jefes viven en mapas distintos. Lo hice en dos tandas con las cuatro instancias en el mismo mapa:
 
 ```powershell
 .\scripts\recolectar_jefes.ps1 -Jefes juice -Episodios 320 -Instancias 4 -Nombre multijefe_imitacion -Ronda 1 -Semilla 100 -MaxMinutos 20
 .\scripts\recolectar_jefes.ps1 -Jefes amlo,chamuco,nahual -Episodios 320 -Instancias 4 -Nombre multijefe_imitacion -Ronda 0 -Semilla 0 -MaxMinutos 75
 ```
 
-Salieron 1 280 peleas y 2 414 963 pasos en 74 minutos (Juice, 9 min; los tres de AMLO, 65 min). Ocupan 5.9 GB en `runs\multijefe_imitacion\datos`. `-MaxMinutos` corta con las peleas intercaladas por jefe, de modo que todos quedan con la misma cantidad. El script se puede relanzar: omite lo ya guardado.
+Salieron 1 280 peleas y 2 414 963 pasos en 74 minutos (Sheinbaum, 9 min; los tres de AMLO, 65 min). Ocupan 5.9 GB en `runs\multijefe_imitacion\datos`. `-MaxMinutos` corta con las peleas intercaladas por jefe, de modo que todos quedan con la misma cantidad. El script se puede relanzar: omite lo ya guardado.
 
 ## 3. Imitación
 
@@ -69,7 +69,7 @@ Evalúa en juego y publica el modelo. La publicación copia el modelo a `mejor.z
 .\.venv\Scripts\python.exe -m dmrl imitar-jefes --accion publicar --arquitectura 2x256 --evaluacion 2x256
 ```
 
-Lo que obtuve: Juice 76% (60 de 79), AMLO, Chamuco y Chupacabras 100% (80 de 80 cada uno).
+Lo que obtuve: Sheinbaum 76% (60 de 79), AMLO, Chamuco y Chupacabras 100% (80 de 80 cada uno).
 
 ## 4. PPO desde la imitación
 
@@ -77,7 +77,7 @@ Lo que obtuve: Juice 76% (60 de 79), AMLO, Chamuco y Chupacabras 100% (80 de 80 
 .\scripts\entrenar.ps1 -Multijefe
 ```
 
-Parte de `runs\multijefe_imitacion\mejor.zip`, usa 6 instancias del juego (2 en el mapa de Juice y 4 en el de AMLO), abre TensorBoard en <http://localhost:6006> y se reanuda solo desde `runs\multijefe_ppo\checkpoints\ultimo.zip`. Para detenerlo con orden: `.\scripts\detener.ps1 -Multijefe` (unos 7 s, guarda el modelo y cierra los juegos).
+Parte de `runs\multijefe_imitacion\mejor.zip`, usa 6 instancias del juego (2 en el mapa de Sheinbaum y 4 en el de AMLO), abre TensorBoard en <http://localhost:6006> y se reanuda solo desde `runs\multijefe_ppo\checkpoints\ultimo.zip`. Para detenerlo con orden: `.\scripts\detener.ps1 -Multijefe` (unos 7 s, guarda el modelo y cierra los juegos).
 
 Para una corrida de toda la noche que sobreviva al cierre de la consola, usa `.\scripts\iniciar_ppo_desacoplado.ps1`. Lanzado desde un PowerShell oculto, el entrenamiento cayó a la mitad de pasos por segundo (250 contra 450). El proceso y sus juegos terminaron en los núcleos de eficiencia del procesador; con `cmd.exe` como padre se reparten bien. No encontré una causa más fina.
 
