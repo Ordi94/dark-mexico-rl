@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark México RL</title>
+<meta name="description" content="Una red neuronal que aprendió a pelear contra los jefes de Dark México: imitación de un bot de reglas y después PPO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f5; --paper:#f8fafc; --ink:#16212c; --ink-2:#47576a; --line:#c4cfdb;
+  --accent:#1d4e9e; --accent-ink:#ffffff; --good:#1c7c4a; --soft-accent:#dce7f7;
+  --font-display:"Big Shoulders Display","Arial Narrow",sans-serif;
+  --font-body:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f141a; --paper:#171e26; --ink:#e4ebf2; --ink-2:#9db0c2; --line:#2e3a48;
+    --accent:#6ea4ff; --accent-ink:#0b1626; --good:#4cc787; --soft-accent:#1b2a42;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f141a; --paper:#171e26; --ink:#e4ebf2; --ink-2:#9db0c2; --line:#2e3a48;
+  --accent:#6ea4ff; --accent-ink:#0b1626; --good:#4cc787; --soft-accent:#1b2a42;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--font-body)}
+main{max-width:960px;margin:0 auto;padding:40px 16px 64px}
+h1{font:800 clamp(40px,8vw,72px)/1 var(--font-display);margin:0 0 12px;letter-spacing:.5px}
+h2{font:700 28px/1.2 var(--font-display);margin:40px 0 12px}
+p{margin:0 0 12px;color:var(--ink-2)}
+.lead{font-size:18px;color:var(--ink)}
+a{color:var(--accent)}
+img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+figure{margin:24px 0}
+figcaption{font-size:14px;color:var(--ink-2);margin-top:8px}
+.botones{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.boton{display:inline-block;padding:10px 18px;border-radius:6px;border:1px solid var(--accent);text-decoration:none;font-weight:600}
+.boton.principal{background:var(--accent);color:var(--accent-ink)}
+.tabla{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--paper);font-size:15px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left}
+td:not(:first-child),th:not(:first-child){text-align:right;font-family:var(--font-mono)}
+td:last-child{color:var(--good);font-weight:600}
+code{font-family:var(--font-mono);background:var(--soft-accent);padding:1px 5px;border-radius:4px;font-size:14px}
+ul{padding-left:20px;color:var(--ink-2)}
+li{margin:4px 0}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Dark México RL</h1>
+  <p class="lead">Una red neuronal que aprendió a pelear contra los jefes de <a href="https://store.steampowered.com/app/4346760/">Dark México</a>. Primero imita a un bot de reglas escrito a mano y después mejora sola con PPO.</p>
+  <p>Proyecto educativo, no oficial y sin relación con NorDreams. Necesitas el juego comprado; el repositorio no incluye archivos del juego.</p>
+
+  <div class="botones">
+    <a class="boton principal" href="guia/">Guía interactiva: cómo aprende la IA</a>
+    <a class="boton" href="https://github.com/Ordi94/dark-mexico-rl">Código en GitHub</a>
+    <a class="boton" href="https://github.com/Ordi94/dark-mexico-rl/releases">Modelos entrenados</a>
+  </div>
+
+  <figure>
+    <img src="img/pelea.gif" alt="La IA peleando contra Sheinbaum con el panel de neuronas" width="960">
+    <figcaption>Una pelea real contra Sheinbaum en su segunda fase. La red espera casi siempre y, cuando llega el golpe, la barra de Parry sube al 100% y hace el parry.</figcaption>
+  </figure>
+
+  <h2>Resultados</h2>
+  <p>Cien peleas por jefe en el juego real, jefe al 100% de vida, política determinista.</p>
+  <div class="tabla">
+  <table>
+    <thead><tr><th>Jefe</th><th>Bot de reglas</th><th>Imitación</th><th>PPO</th></tr></thead>
+    <tbody>
+      <tr><td>Sheinbaum (<code>juice</code>)</td><td>66%</td><td>76%</td><td>92%</td></tr>
+      <tr><td>AMLO + Chamuco</td><td>100%</td><td>100%</td><td>92%</td></tr>
+      <tr><td>Chamuco</td><td>100%</td><td>100%</td><td>99%</td></tr>
+      <tr><td>Chupacabras</td><td>98%</td><td>100%</td><td>100%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Para aprender</h2>
+  <ul>
+    <li><a href="guia/">Guía interactiva</a>: neuronas, softmax, Tanh, imitación y PPO explicados desde cero.</li>
+    <li><a href="guia/general.html">Diagrama general</a> y <a href="guia/arquitectura.html">diagrama detallado</a> del sistema.</li>
+    <li><a href="https://github.com/Ordi94/dark-mexico-rl/blob/main/docs/01-instalacion.md">Instalación</a>, <a href="https://github.com/Ordi94/dark-mexico-rl/blob/main/docs/02-ver-pelear.md">ver pelear al modelo</a> y <a href="https://github.com/Ordi94/dark-mexico-rl/blob/main/docs/04-entrena-tu-ia.md">entrenar tu propia IA</a>.</li>
+    <li><a href="https://github.com/Ordi94/dark-mexico-rl/blob/main/docs/05-lo-que-aprendimos.md">Lo que aprendimos</a>: lo que funcionó y lo que no.</li>
+  </ul>
+
+  <footer>
+    Dark México es de NorDreams. Código bajo licencia MIT. Hecho con ayuda de Claude Code, como se cuenta en el <a href="https://github.com/Ordi94/dark-mexico-rl#cómo-lo-hice">README</a>.
+  </footer>
+</main>
+</body>
+</html>
