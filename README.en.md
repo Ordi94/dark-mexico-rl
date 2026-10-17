@@ -10,6 +10,12 @@ This is an educational project. It is unofficial and not affiliated with NorDrea
 
 The documentation is in Spanish. This page is a short summary.
 
+## Demo
+
+![The AI fighting Juice with the neuron panel](docs/img/pelea.gif)
+
+Fifteen seconds of a real fight against Juice (second phase): the game on the left, the live panel on the right. The network mostly waits, and when the hit comes the Parry bar jumps to 100% and the AI parries.
+
 ## Results
 
 100 fights per boss, boss at full health, first phase of each boss, deterministic policy. All numbers come from the real game.

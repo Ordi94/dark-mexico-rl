@@ -14,7 +14,9 @@ Este proyecto es educativo, no oficial y no tiene relación con NorDreams. Neces
 
 El panel en vivo muestra las neuronas de la red, la probabilidad de cada acción y las entradas que más pesaron en la decisión. Se explica en [docs/02-ver-pelear.md](docs/02-ver-pelear.md).
 
-<!-- GIF de una pelea completa con el panel: pendiente de grabar. Guardarlo en docs/img/pelea.gif y enlazarlo aquí. -->
+![La IA peleando contra Juice con el panel de neuronas](docs/img/pelea.gif)
+
+Quince segundos de una pelea real contra Juice (segunda fase): a la izquierda el juego, a la derecha el panel. Se ve cómo la red espera casi siempre y, cuando llega el golpe, la barra de Parry sube al 100% y la IA hace el parry.
 
 ## Resultados
 
